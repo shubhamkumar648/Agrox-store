@@ -4,7 +4,6 @@ import { RoutPath } from "./routes/routespath";
 function App() {
   return (
     <div className="App">
-    hello
     <RoutPath/>
     </div>
   );
