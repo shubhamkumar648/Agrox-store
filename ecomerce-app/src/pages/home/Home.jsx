@@ -1,5 +1,5 @@
 import React from "react";
-import "./home.css";
+import "./Home.css";
 
 import pesticides from "../../assest/pesticide.jpg";
 import fertilizer from "../../assest/fertilizer.jpg";
