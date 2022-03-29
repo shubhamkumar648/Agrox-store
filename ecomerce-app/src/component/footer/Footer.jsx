@@ -3,23 +3,23 @@ import React from 'react'
 export default function Footer() {
   return (
     <div>
-          <footer class="fotter__container">
-          <div class="footer_header">
-            <span class="font-l fs-l">
-              Mady by<i class="fas fa-code code_color"></i>Shubham Kumar
+          <footer className="fotter__container">
+          <div className="footer_header">
+            <span className="font-l fs-l">
+              Mady by<i className="fas fa-code code_color"></i>Shubham Kumar
             </span>
           </div>
 
-          <div class="footer_social-icon">
+          <div className="footer_social-icon">
             <ul>
               <li>
                 <a href="https://github.com/shubhamkumar648" target="_blank">
-                  <i class="fab fa-github"></i>
+                  <i className="fab fa-github"></i>
                 </a>
               </li>
               <li>
                 <a href="https://twitter.com/shubham8124" target="_blank">
-                  <i class="fab fa-twitter"></i>
+                  <i className="fab fa-twitter"></i>
                 </a>
               </li>
               <li>
@@ -27,7 +27,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/in/shubham-kumar8124"
                   target="_blank"
                 >
-                  <i class="fab fa-linkedin-in"></i>
+                  <i className="fab fa-linkedin-in"></i>
                 </a>
               </li>
             </ul>
