@@ -8,7 +8,7 @@ export const RoutPath = () => {
       <Routes>
     <Route path ="/" element ={<Home/>}/>
     <Route path ="/wishlisht" element ={<Wishlisht/>}/>
-    <Route path ="/product" element ={<Products/>}/>
+    <Route path ="/productlisting" element ={<Products/>}/>
     <Route path ="/cart" element ={<Cart/>}/>
     <Route path ="/login" element ={<Login/>}/>
     <Route path ="/signup" element ={<Signup/>}/>
