@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FaHeart,FaShoppingCart } from "react-icons/fa";
+
 import  "./Navbar.module.css"
 
 export  function Navbar() {
@@ -19,21 +21,19 @@ export  function Navbar() {
             
               <Link className="link__nostyle" to= "/login"> Login</Link>
               </button>
-              
-            <button className="btn">
-              <a href="./pages/wishlist.html" className="link__nostyle ">
-                <i className="fa fa-solid fa-heart large_icon"></i>
 
+            <button className="btn">
+              <Link  className='link__nostyle' to="./wishlisht"> 
+                  <FaHeart className='large_icon' />
                 <span className="list_count">6</span>
-              </a>
+              </Link>
             </button>
             <button className="btn">
               <a href="./pages/cartmangment.html" className="link__nostyle ">
-                <i
-                  className="fa fa-shopping-cart large_icon"
-                  aria-hidden="true"
-                ></i>
-                <span className="cart_count position">4</span>
+              <Link className='link__nostyle' to = "./cart">
+                 <FaShoppingCart className='large_icon'/>
+              </Link>
+             <span className="cart_count position">4</span>
               </a>
             </button>
           </div>
