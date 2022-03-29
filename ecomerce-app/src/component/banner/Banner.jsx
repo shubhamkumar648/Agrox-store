@@ -14,9 +14,7 @@ export const Banner = () => {
 
             <div className="shopNow">
               <button className="btn btn__primary m-auto " styles="m-auto">
-                {/* <a href="./pages/productlist.html" className="link__nostyle">
-                  Shop Now
-                </a> */}
+                
                 <Link className='link__nostyle' to='/productlisting'>Shop Now</Link>
 
               </button>

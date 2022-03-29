@@ -4,7 +4,7 @@ import { FaHeart,FaShoppingCart } from "react-icons/fa";
 
 import  "./Navbar.module.css"
 
-export  function Navbar() {
+export   const Navbar = ()  =>{
   return (
     <div>
         <header className="ecom_header flex">
