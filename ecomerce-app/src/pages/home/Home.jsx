@@ -4,7 +4,12 @@ import "./Home.css";
 
 import { Banner, Categories, Footer } from "../../component";
 
+
+
+
 export const Home = () => {
+  
+
   return (
     <div>
       <>
