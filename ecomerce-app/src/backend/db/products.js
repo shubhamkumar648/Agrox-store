@@ -52,4 +52,31 @@ export const products = [
     categoryName: "Spray Machine",
     discount:["10% off"]
   },
+  {
+    _id: uuid(),
+    img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
+    title: "tools",
+    mrpPrice: "5000",
+    discountPrice:4500,
+    categoryName: "Spray Machine",
+    discount:["10% off"]
+  },
+  {
+    _id: uuid(),
+    img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
+    title: "tools",
+    mrpPrice: "5000",
+    discountPrice:4500,
+    categoryName: "Spray Machine",
+    discount:["10% off"]
+  },
+  {
+    _id: uuid(),
+    img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
+    title: "tools",
+    mrpPrice: "5000",
+    discountPrice:4500,
+    categoryName: "Spray Machine",
+    discount:["10% off"]
+  },
 ];

@@ -1,3 +1,6 @@
+
+
+
 const ProductCard = ({ prodDetail }) => {
   const { img, title, categoryName, discountPrice, mrpPrice, discount } =
     prodDetail;
