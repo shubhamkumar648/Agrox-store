@@ -6,7 +6,7 @@ import Mockman from "mockman-js"
 export const RoutPath = () => {
   return (
     <div>
-      <Routes>
+    <Routes>
     <Route path ="/" element ={<Home/>}/>
     <Route path ="/wishlisht" element ={<Wishlisht/>}/>
     <Route path ="/productlisting" element ={<Productslist/>}/>

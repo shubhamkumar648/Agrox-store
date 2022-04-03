@@ -29,7 +29,7 @@ export const products = [
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
     title: "tools",
     mrpPrice: "5000",
-    discountPrice:4500,
+    discountPrice:"5200",
     categoryName: "Spray Machine",
     discount:["10% off"]
   },
@@ -38,7 +38,7 @@ export const products = [
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542517/samples/ecomerce/assest/seedcard_vke0ta.jpg",  
     title: "tools",
     mrpPrice: "3500",
-    discountPrice:3150,
+    discountPrice:"3150",
 
     categoryName: "Spray Machine",
     discount:["10% off"]
@@ -48,7 +48,7 @@ export const products = [
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542516/samples/ecomerce/assest/ferilizercard_jhklrc.jpg",
     title: "tools",
     mrpPrice: "4500",
-    discountPrice:4050,
+    discountPrice:"3850",
     categoryName: "Spray Machine",
     discount:["10% off"]
   },
@@ -57,7 +57,7 @@ export const products = [
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
     title: "tools",
     mrpPrice: "5000",
-    discountPrice:4500,
+    discountPrice:"4500",
     categoryName: "Spray Machine",
     discount:["10% off"]
   },
@@ -66,7 +66,7 @@ export const products = [
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
     title: "tools",
     mrpPrice: "5000",
-    discountPrice:4500,
+    discountPrice:"2300",
     categoryName: "Spray Machine",
     discount:["10% off"]
   },
@@ -75,7 +75,7 @@ export const products = [
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
     title: "tools",
     mrpPrice: "5000",
-    discountPrice:4500,
+    discountPrice:"4200",
     categoryName: "Spray Machine",
     discount:["10% off"]
   },

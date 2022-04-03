@@ -1,7 +1,11 @@
 import React from 'react'
 
+import { useFilter } from '../Context/FilterContext/Filter-context'
+
+
 export const ProductFilter = () => {
-    
+  const {filterstate,filterdispatch} = useFilter()
+  
   return (
     <div>
         <aside class="productlist_filter_sidebar">
@@ -25,6 +29,39 @@ export const ProductFilter = () => {
             class="slider"
           />
 
+     
+           <div class="sortby filter_li">
+            <h4 class="font-l mt-1">Sort by</h4>
+            <ul>
+              <li>
+              <label>
+                <input
+                  type="radio"
+                  name="sort"
+                  value = "low_to_High"
+                  checked={filterstate.sortBy ==="low_to_High"}
+                  onChange={(e) => filterdispatch({ type: "SORT_BY",payload: e.target.value})}
+
+                />
+                Low to High</label>
+              </li>
+              <li>
+              <label>
+                <input
+                  type="radio"
+                  name="sort"
+                  value ="high_to_Low"
+
+                  checked={filterstate.sortBy ==="high_to_Low"}
+                  onChange={(e) => filterdispatch({type: "SORT_BY", payload: e.target.value})}
+
+                />
+                High to Low</label>
+              </li>
+            </ul>
+          </div>
+
+               <hr />
           {/* <!-- price filter section  --> */}
           <div class="price filter_li">
             <ul>
@@ -51,6 +88,7 @@ export const ProductFilter = () => {
             </ul>
           </div>
           <hr />
+
           {/* <!-- rating filter  section --> */}
           <div class="Rating filter_li">
             <h4 class="font-l mt-1">Rating</h4>
@@ -85,29 +123,33 @@ export const ProductFilter = () => {
           </div>
 
           <hr />
-          <div class="sortby filter_li">
+          {/* <div class="sortby filter_li">
             <h4 class="font-l mt-1">Sort by</h4>
             <ul>
               <li>
+              <label>
                 <input
                   type="radio"
-                  id="ferilizer"
-                  name="fav_lib"
-                  value="fertilizer"
+                  name="sort"
+                  checked={sortBy === "low_to_High"}
+                  onChange={() => dispatch({type: "low_to_High"})}
+
                 />
-                <label for="ferilizer">High to Low</label>
+                High to Low</label>
               </li>
               <li>
+              <label>
                 <input
                   type="radio"
-                  id="Pesticide"
-                  name="fav_lib"
-                  value="Pesticided"
+                  name="sort"
+                  checked={sortBy === "high_to_Low"}
+                  onChange={() => dispatch({type: "high_to_Low"})}
+
                 />
-                <label for="Pesticide">Low to High</label>
+                Low to High</label>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </aside>
     </div>
