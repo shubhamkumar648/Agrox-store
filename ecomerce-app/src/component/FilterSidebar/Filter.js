@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { useFilter } from '../Context/FilterContext/Filter-context'
+import { useFilter } from '../../Context/FilterContext/Filter-context'
+import { CategoriesFilter } from './CategoriesFilter'
 
 
 export const ProductFilter = () => {
@@ -63,7 +64,9 @@ export const ProductFilter = () => {
 
                <hr />
           {/* <!-- price filter section  --> */}
-          <div class="price filter_li">
+          {/* <div class="price filter_li">
+          <h4 class="font-l mt-1">Category</h4>
+
             <ul>
               <li>
                 <input type="checkbox" id="fertilizer" />
@@ -82,12 +85,14 @@ export const ProductFilter = () => {
               </li>
               <li>
                 <input type="checkbox" id="tools" />
-                <label for="toolse1">To/ols</label>
+                <label for="toolse1">Tools</label>
                 <br />
               </li>
             </ul>
           </div>
-          <hr />
+          <hr /> */}
+
+          <CategoriesFilter />
 
           {/* <!-- rating filter  section --> */}
           <div class="Rating filter_li">

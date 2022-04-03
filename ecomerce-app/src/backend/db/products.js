@@ -36,11 +36,10 @@ export const products = [
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542517/samples/ecomerce/assest/seedcard_vke0ta.jpg",  
-    title: "tools",
+    title: "Spray Machine",
     mrpPrice: "3500",
     discountPrice:"3150",
-
-    categoryName: "Spray Machine",
+    categoryName: "Seed",
     discount:["10% off"]
   },
   {
@@ -49,7 +48,7 @@ export const products = [
     title: "tools",
     mrpPrice: "4500",
     discountPrice:"3850",
-    categoryName: "Spray Machine",
+    categoryName: "Seed",
     discount:["10% off"]
   },
   {
@@ -58,16 +57,16 @@ export const products = [
     title: "tools",
     mrpPrice: "5000",
     discountPrice:"4500",
-    categoryName: "Spray Machine",
+    categoryName: "Seed",
     discount:["10% off"]
   },
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
-    title: "tools",
+    title: "Pesticide",
     mrpPrice: "5000",
     discountPrice:"2300",
-    categoryName: "Spray Machine",
+    categoryName: "Pesticide",
     discount:["10% off"]
   },
   {
@@ -76,7 +75,7 @@ export const products = [
     title: "tools",
     mrpPrice: "5000",
     discountPrice:"4200",
-    categoryName: "Spray Machine",
+    categoryName: "Seed",
     discount:["10% off"]
   },
 ];

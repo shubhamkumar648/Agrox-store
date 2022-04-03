@@ -3,33 +3,20 @@ import { Link } from "react-router-dom";
 import "./Productslist.css";
 import { ProductCard } from "../../component/Productcard";
 import { useProduct } from "../../Context/ProductContext/Prodctcard-context";
-import { ProductFilter } from "../../component/Filter";
+import { ProductFilter } from "../../component/FilterSidebar/Filter";
 import { useFilter } from "../../Context/FilterContext/Filter-context";
+
+import { SortProduct } from "../../Utils/sortProduct";
+import { ProductcategoryFilter } from "../../Utils/categoryFilter";
 
 export const Productslist = () => {
   const { product } = useProduct();
-  const { filterstate, filterdispatch } = useFilter();
+  const { filterstate } = useFilter();
 
-  const SortProduct = (sort, data) => {
-
-      const list = [...data];
-    if (sort === "low_to_High") {
-      
-      return list.sort(
-        (item1, item2) => (item1.discountPrice) - (item2.discountPrice)
-
-      );
-    } else if (sort === "high_to_Low") {
-      return list.sort(
-        (item1, item2) => (item2.discountPrice) - (item1.discountPrice)
-
-      );
-    }
-
-    return list;
-  };
-
-  const SortedProduct = SortProduct(filterstate.sortBy, product);
+    
+  const {sortBy,category} = filterstate
+const SortedProduct = SortProduct(sortBy, product);
+const CategoriesFilter = ProductcategoryFilter(category,SortedProduct)
 
   return (
     <main class="productlist_layout">
@@ -37,10 +24,11 @@ export const Productslist = () => {
 
       <article class="prodctlist_card_section">
         <>
-          {SortedProduct.map((item) => {
-
+          
+           {CategoriesFilter.map((item) => {
+                   {console.log("sidhe categore filter se ....")}
             return <ProductCard prodDetail={item} key={item.id} />;
-          })}
+          })} 
         </>
       </article>
     </main>

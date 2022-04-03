@@ -14,7 +14,6 @@ const Productprovider = ({ children }) => {
     }
   }, [loading]);
 
-  console.log(product, "products");
 
   return (
     <Productcontext.Provider value={{ product }}>

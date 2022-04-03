@@ -7,7 +7,10 @@ const filterContext  = createContext()
 
  const FilterProvider = ({children}) => {
 
-  const initialState = {sortBy: ""}
+  const initialState = {
+    sortBy: "",
+    category: []
+  }
 
    const [filterstate,filterdispatch] = useReducer(FilterReducer,initialState)
 
