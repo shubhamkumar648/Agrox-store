@@ -6,22 +6,6 @@ import { v4 as uuid } from "uuid";
  * */
 
 
-//  image:
-//  "https://res.cloudinary.com/diyo6qdy1/image/upload/v1647612850/e-comm/man_bgremove/5-removebg-preview_seobft.png",
-// title: "FERARI Black",
-// price: "1800",
-// mrpPrice: "3800",
-// rating: 4,
-// brand: "Astoria",
-// inStock: true,
-// fastDelivery: true,
-// offer: ["60% off"],
-// categoryName: "man",
-// color: "brown",
-// stock: 22,
-// isLiked: false,
-// outOfStock: false,
-// isSelected: false,
 
 export const products = [
   {
@@ -31,7 +15,8 @@ export const products = [
     mrpPrice: "5000",
     discountPrice:"5200",
     categoryName: "Spray Machine",
-    discount:["10% off"]
+    discount:["10% off"],
+    rating:4
   },
   {
     _id: uuid(),
@@ -40,7 +25,8 @@ export const products = [
     mrpPrice: "3500",
     discountPrice:"3150",
     categoryName: "Seed",
-    discount:["10% off"]
+    discount:["10% off"],
+    rating: 5
   },
   {
     _id: uuid(),
@@ -49,7 +35,8 @@ export const products = [
     mrpPrice: "4500",
     discountPrice:"3850",
     categoryName: "Seed",
-    discount:["10% off"]
+    discount:["10% off"],
+    rating:3
   },
   {
     _id: uuid(),
@@ -58,7 +45,8 @@ export const products = [
     mrpPrice: "5000",
     discountPrice:"4500",
     categoryName: "Seed",
-    discount:["10% off"]
+    discount:["10% off"],
+    rating:4
   },
   {
     _id: uuid(),
@@ -67,7 +55,8 @@ export const products = [
     mrpPrice: "5000",
     discountPrice:"2300",
     categoryName: "Pesticide",
-    discount:["10% off"]
+    discount:["10% off"],
+    rating:3,
   },
   {
     _id: uuid(),
@@ -76,6 +65,7 @@ export const products = [
     mrpPrice: "5000",
     discountPrice:"4200",
     categoryName: "Seed",
-    discount:["10% off"]
+    discount:["10% off"],
+    rating:2
   },
 ];

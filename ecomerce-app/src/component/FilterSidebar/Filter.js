@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useFilter } from '../../Context/FilterContext/Filter-context'
 import { CategoriesFilter } from './CategoriesFilter'
+import { RatingFilterr } from './RatingFilterr'
 
 
 export const ProductFilter = () => {
@@ -63,71 +64,15 @@ export const ProductFilter = () => {
           </div>
 
                <hr />
-          {/* <!-- price filter section  --> */}
-          {/* <div class="price filter_li">
-          <h4 class="font-l mt-1">Category</h4>
-
-            <ul>
-              <li>
-                <input type="checkbox" id="fertilizer" />
-                <label for="fertilizer">Ferilizer</label>
-                <br />
-              </li>
-              <li>
-                <input type="checkbox" id="Pesticide" />
-                <label for="Pesticide"> Pesticide</label>
-                <br />
-              </li>
-              <li>
-                <input type="checkbox" id="Seed" />
-                <label for="Seed">Seed</label>
-                <br />
-              </li>
-              <li>
-                <input type="checkbox" id="tools" />
-                <label for="toolse1">Tools</label>
-                <br />
-              </li>
-            </ul>
-          </div>
-          <hr /> */}
+        
 
           <CategoriesFilter />
 
           {/* <!-- rating filter  section --> */}
-          <div class="Rating filter_li">
-            <h4 class="font-l mt-1">Rating</h4>
-            <ul>
-              <li>
-                <input
-                  type="radio"
-                  id="ferilizer"
-                  name="fav_lib"
-                  value="fertilizer"
-                />
-                <label for="ferilizer">Fertilizer</label>
-              </li>
-              <li>
-                <input
-                  type="radio"
-                  id="Pesticide"
-                  name="fav_lib"
-                  value="Pesticided"
-                />
-                <label for="Pesticide">Pesticide</label>
-              </li>
-              <li>
-                <input type="radio" id="seeds" name="fav_lib" value="Seeds" />
-                <label for="seeds">Seeds</label>
-              </li>
-              <li>
-                <input type="radio" id="Tools" name="fav_lib" value="Tools" />
-                <label for="Tools">Tools</label>
-              </li>
-            </ul>
-          </div>
+         
 
           <hr />
+          <RatingFilterr/>
           {/* <div class="sortby filter_li">
             <h4 class="font-l mt-1">Sort by</h4>
             <ul>

@@ -8,15 +8,17 @@ import { useFilter } from "../../Context/FilterContext/Filter-context";
 
 import { SortProduct } from "../../Utils/sortProduct";
 import { ProductcategoryFilter } from "../../Utils/categoryFilter";
+import { RatingFilter } from "../../Utils/ratingFilter";
 
 export const Productslist = () => {
   const { product } = useProduct();
   const { filterstate } = useFilter();
 
     
-  const {sortBy,category} = filterstate
+  const {sortBy,category,rating} = filterstate
 const SortedProduct = SortProduct(sortBy, product);
 const CategoriesFilter = ProductcategoryFilter(category,SortedProduct)
+const ProductRatingFiter = RatingFilter(rating,CategoriesFilter)
 
   return (
     <main class="productlist_layout">
@@ -25,7 +27,7 @@ const CategoriesFilter = ProductcategoryFilter(category,SortedProduct)
       <article class="prodctlist_card_section">
         <>
           
-           {CategoriesFilter.map((item) => {
+           {ProductRatingFiter.map((item) => {
                    {console.log("sidhe categore filter se ....")}
             return <ProductCard prodDetail={item} key={item.id} />;
           })} 

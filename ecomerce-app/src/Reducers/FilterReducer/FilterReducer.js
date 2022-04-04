@@ -17,6 +17,10 @@ export const FilterReducer = (state, action) => {
             category: [...state.category, action.payload],
           };
 
+
+          case  "FILTER_BY_RATING":
+           return {...state, rating: action.payload}
+
     default:
       return state;
   }
