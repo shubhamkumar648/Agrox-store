@@ -16,7 +16,7 @@ export const ProductFilter = () => {
         <div class="sidebar_header flex wrap pt-1">
           <h4 class="font-l mb-1"> Filters</h4>
           <a href="#" class="link__nostyle">
-            <span class="clearall text_center">Clear all</span>
+            <span class="clearall text_center" onClick={() =>filterdispatch({type: "CLEAR"})}>Clear all</span>
           </a>
         </div>
         <hr />

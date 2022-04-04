@@ -11,7 +11,7 @@ export const PriceFilter  = () => {
           <p>
           <span className="fnt-w-600">{filterstate.price}</span>
 
-            to <span className="fnt-w-600">6000</span> 
+            to <span className="fnt-w-600">0</span> 
           </p>
           <input
             type="range"

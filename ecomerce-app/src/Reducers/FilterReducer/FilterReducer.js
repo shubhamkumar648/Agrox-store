@@ -23,6 +23,15 @@ export const FilterReducer = (state, action) => {
 
            case "FILTER_BY_PRICE":
              return {...state, price:action.payload}
+
+             case "CLEAR":
+               console.log(action.type,"action clear");
+             return {...state, 
+             sortBy: "",
+             category: [],
+             rating: "",
+             price:0,}
+
     default:
       return state;
   }
