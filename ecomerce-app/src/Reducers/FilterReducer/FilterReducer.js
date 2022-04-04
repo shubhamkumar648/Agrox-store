@@ -1,5 +1,4 @@
 export const FilterReducer = (state, action) => {
-  console.log(state, "staeconsole");
 
   switch (action.type) {
     case "SORT_BY":
@@ -21,6 +20,9 @@ export const FilterReducer = (state, action) => {
           case  "FILTER_BY_RATING":
            return {...state, rating: action.payload}
 
+
+           case "FILTER_BY_PRICE":
+             return {...state, price:action.payload}
     default:
       return state;
   }

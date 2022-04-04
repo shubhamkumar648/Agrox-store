@@ -10,7 +10,8 @@ const filterContext  = createContext()
   const initialState = {
     sortBy: "",
     category: [],
-    rating: ""
+    rating: "",
+    price:0
   }
 
    const [filterstate,filterdispatch] = useReducer(FilterReducer,initialState)

@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useFilter } from '../../Context/FilterContext/Filter-context'
 import { CategoriesFilter } from './CategoriesFilter'
+import { PriceFilter } from './PriceFilter'
 import { RatingFilterr } from './RatingFilterr'
 
 
@@ -20,17 +21,10 @@ export const ProductFilter = () => {
         </div>
         <hr />
 
-        <div class="aside_filterlist flex flex-col wrap">
-          <h4 class=" font-l mt-1">Price</h4>
-          <input
-            type="range"
-            min="0"
-            max="100"
-            step="40"
-            list="tickmarks"
-            class="slider"
-          />
+         <div class="aside_filterlist flex flex-col wrap">
 
+         <PriceFilter/>
+       
      
            <div class="sortby filter_li">
             <h4 class="font-l mt-1">Sort by</h4>
@@ -73,33 +67,7 @@ export const ProductFilter = () => {
 
           <hr />
           <RatingFilterr/>
-          {/* <div class="sortby filter_li">
-            <h4 class="font-l mt-1">Sort by</h4>
-            <ul>
-              <li>
-              <label>
-                <input
-                  type="radio"
-                  name="sort"
-                  checked={sortBy === "low_to_High"}
-                  onChange={() => dispatch({type: "low_to_High"})}
-
-                />
-                High to Low</label>
-              </li>
-              <li>
-              <label>
-                <input
-                  type="radio"
-                  name="sort"
-                  checked={sortBy === "high_to_Low"}
-                  onChange={() => dispatch({type: "high_to_Low"})}
-
-                />
-                Low to High</label>
-              </li>
-            </ul>
-          </div> */}
+         
         </div>
       </aside>
     </div>
