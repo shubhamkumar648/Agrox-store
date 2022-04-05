@@ -3,7 +3,7 @@ import { useContext, createContext, useState, useEffect } from "react";
 
 const Productcontext = createContext(); 
 
-const Productprovider = ({ children }) => {
+const ProductProvider = ({ children }) => {
   const [product, setProduct] = useState([]);
   const { apiData, loading } = useAxios("/api/products");
 
@@ -24,4 +24,4 @@ const Productprovider = ({ children }) => {
 
 const useProduct = () => useContext(Productcontext);
 
-export { Productprovider, useProduct };
+export { ProductProvider, useProduct };

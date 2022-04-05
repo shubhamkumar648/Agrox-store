@@ -5,17 +5,17 @@ import { ProductCard } from "../../component/Productcard";
 import { useProduct } from "../../Context/ProductContext/Prodctcard-context";
 import { ProductFilter } from "../../component/FilterSidebar/Filter";
 import { useFilter } from "../../Context/FilterContext/Filter-context";
+import { SortProduct,Pricefilter,RatingFilter,ProductcategoryFilter } from "../../Utils";
 
-import { SortProduct } from "../../Utils/sortProduct";
-import { ProductcategoryFilter } from "../../Utils/categoryFilter";
-import { RatingFilter } from "../../Utils/ratingFilter";
-import { Pricefilter } from "../../Utils/pricefilter";
+
+
+
 
 export const Productslist = () => {
   const { product } = useProduct();
   const { filterstate } = useFilter();
 
-    
+  
 const {sortBy,category,rating,price} = filterstate
 
 const SortedProduct = SortProduct(sortBy, product);
@@ -33,7 +33,6 @@ const ProductPriceFilter = Pricefilter(price,ProductRatingFilter)
         <>
           
            {ProductPriceFilter.map((item) => {
-                   {console.log("sidhe categore filter se ....")}
             return <ProductCard prodDetail={item} key={item.id} />;
           })} 
         </>
