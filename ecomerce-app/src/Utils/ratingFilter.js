@@ -1,10 +1,7 @@
+export const RatingFilter = (rating, data) => {
+  if (rating) {
+    return data.filter((item) => item.rating >= rating);
+  }
 
-export const RatingFilter = (rating,data) => {
-
-if(rating) {
-     
-    return [...data].filter(item => item.rating >= rating)
-}
-    
-return data;
-}
+  return data;
+};
