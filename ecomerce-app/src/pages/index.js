@@ -1,9 +1,11 @@
 import {Cart} from "./cart/Cart";
-import {Products} from "./products/Products";
+import {Productslist} from "./productslist/Productslist";
 import {Wishlisht} from "./wishlisht/Wishlisht";
 import {Home} from "./home/Home";
 import { Login } from "./auth/login/Login";
 import { Signup } from "./auth/signup/Signup";
 
 
-export {Cart,Products,Wishlisht,Home,Login,Signup}
+
+
+export {Cart,Productslist,Wishlisht,Home,Login,Signup}

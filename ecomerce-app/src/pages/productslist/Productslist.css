@@ -1,0 +1,73 @@
+
+
+.productlist_layout {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+  
+  .sidebar_header {
+    justify-content: space-between;
+  }
+  
+  .clearall {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: var(--primary-color);
+  }
+  
+  
+  /* main section */
+  .prodctlist_card_section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 10px;
+  }
+  
+  .product_cardMainBody {
+    padding: 1rem;
+  }
+  
+  .product_card:hover {
+    box-shadow: var(--productcard-shadow);
+  }
+  
+  
+  .card_content {
+    justify-content: space-between;
+  }
+  
+  .price {
+    margin-left: -1.3;
+  }
+  
+  .btn_margin {
+    padding-left: 3rem;
+  }
+  
+  .filter_li li {
+    cursor: pointer;
+    padding: 1rem 1rem;
+    font-size: 1.125rem;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+
+  .categoryRaing_section{
+
+   justify-content: space-between;  
+
+  }
+
+  .rating_color {
+    color: var(--rating-color);
+  }
+
+  .rating_star_container {
+    height: 2rem;
+    width: 3rem;
+    border: 1px solid black ;
+    background-color: lightblue;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 0.5rem
+  }
