@@ -56,6 +56,7 @@ export const products = [
     discount: ["10% off"],
     rating: 3,
   },
+  
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",

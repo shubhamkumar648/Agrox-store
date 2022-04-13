@@ -1,9 +1,30 @@
-
-
+import { useCart } from "../Context/cart-context";
+import axios from "axios"
 
 const ProductCard = ({ prodDetail }) => {
-  const { img, title, categoryName, discountPrice, mrpPrice, discount,rating } =
+  const { img, title, categoryName, discountPrice, mrpPrice, discount,rating, _id } =
     prodDetail;
+
+  const {cartState, cartDispatch} = useCart()
+
+  const addtoCartHandler = async (prodDetail) => {  
+
+    {
+    try{
+         const response= await axios.post("api/user/cart",{prodDetail}, 
+
+         {
+          headers: { authorization: process.env.REACT_APP_ENCODE_TOKEN }
+        });
+          console.log(response)
+        cartDispatch({type: "Add_to_cart", payload: prodDetail}) 
+     }
+
+     catch(error){
+       console.log(error);
+     }}
+
+    }
 
   return (
     <div>
@@ -32,11 +53,16 @@ const ProductCard = ({ prodDetail }) => {
             <h6 className="actual_price light fs-md linthrough">{mrpPrice}</h6>
             <h6 className="discount-color fs-md">{discount}</h6>
           </div>
-          <button className="btn btn__primary icons_btn ecoms_btn btn_margin">
-            <span className="ml-3">
+          
+          <button 
+           onClick = {() => addtoCartHandler(prodDetail)}
+
+          className="btn btn__primary icons_btn ecoms_btn btn_margin">
+            <span className="ml-3"> 
               <i className="fa fa-shopping-cart" aria-hidden="true"></i>
             </span>
             Add to cart
+            
           </button>
         </div>
       </div>

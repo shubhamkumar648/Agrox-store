@@ -7,6 +7,7 @@ export const RoutPath = () => {
   return (
     <div>
     <Routes>
+    
     <Route path ="/" element ={<Home/>}/>
     <Route path ="/wishlisht" element ={<Wishlisht/>}/>
     <Route path ="/productlisting" element ={<Productslist/>}/>
@@ -15,9 +16,7 @@ export const RoutPath = () => {
     <Route path ="/signup" element ={<Signup/>}/>
     <Route path ="/mockman" element ={<Mockman/>}/>
 
-
-   
-  </Routes>
+   </Routes>
     
     </div>
   )
