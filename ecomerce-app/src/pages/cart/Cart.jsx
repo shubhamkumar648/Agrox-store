@@ -18,18 +18,27 @@ export const Cart = () => {
       </h3>
          <h1> helle{cartItems.length}</h1>
 
-         {cartItems.length > 0 && (
+         {cartItems.length > 0 ? (
 
           <main className="productcard_cart flex wrap flex_center">
+
           {cartItems.map ((item) => (<Cartcard key = {item._id} product = {item}/> ))}
 
-            {/* <!-- card total price section --> */}
+            
+
+        {/* <!-- card total price section --> */}
                 
         
              <PriceCard />
        
       </main>
-      )} 
+      ): (
+        <div>
+          your cart is empty go back to shoping :)
+        </div>
+      )
+      
+      } 
            
     </div>
   );

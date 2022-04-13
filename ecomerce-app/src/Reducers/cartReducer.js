@@ -2,7 +2,6 @@
 
 
 export  const cartReducerFun = (state,action) => {
-    console.log(action.type);
 
     switch(action.type) {
 
@@ -11,6 +10,11 @@ export  const cartReducerFun = (state,action) => {
        return {...state , cartItems:[...state.cartItems , {...action.payload} ]
 
     }
+
+    case "Remove_from_cart": 
+
+    return {...state, cartItems: state.cartItems.filter((item) => item._id !== action.payload)}
+    
   
 }
 

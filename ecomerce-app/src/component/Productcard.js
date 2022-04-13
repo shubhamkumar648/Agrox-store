@@ -5,7 +5,7 @@ const ProductCard = ({ prodDetail }) => {
   const { img, title, categoryName, discountPrice, mrpPrice, discount,rating, _id } =
     prodDetail;
 
-  const {cartState, cartDispatch} = useCart()
+  const { cartDispatch} = useCart()
 
   const addtoCartHandler = async (prodDetail) => {  
 
