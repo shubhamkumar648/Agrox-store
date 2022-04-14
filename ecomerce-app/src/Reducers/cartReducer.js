@@ -15,6 +15,9 @@ export  const cartReducerFun = (state,action) => {
 
     return {...state, cartItems: state.cartItems.filter((item) => item._id !== action.payload)}
     
+    case "Move_to_wishList":
+
+    return {...state, wishList:[state.wishList,{...action.payload}]}
   
 }
 

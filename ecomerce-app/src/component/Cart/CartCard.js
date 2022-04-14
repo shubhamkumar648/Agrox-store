@@ -1,31 +1,37 @@
 import { useCart } from "../../Context/cart-context";
-import  axios from "axios";
+import axios from "axios";
+import { ItemWishlist } from "../../Utils";
 
-const Cartcard = ({ product }) =>
- {
-  const { img, categoryName, discountPrice, mrpPrice, discount,_id } = product;
+const Cartcard = ({ product }) => {
+  const { img, categoryName, discountPrice, mrpPrice, discount, _id } = product;
 
   const { cartState, cartDispatch } = useCart();
 
-  const removeFromCartHandler = async(_id) => {
-          {
-    try {
+  const isIteminList = ItemWishlist( _id,cartState.wishList);
 
-      const cartResponse = await axios.delete(`api/user/wishlist/${_id}`, 
-      {
-        headers: {authorization: process.env.REACT_APP_ENCODE_TOKEN },
-      });
+  const removeFromCartHandler = async (_id) => {
+    {
+      try {
+        const cartResponse = await axios.delete(`api/user/wishlist/${_id}`, {
+          headers: { authorization: process.env.REACT_APP_ENCODE_TOKEN },
+        });
 
-    console.log(cartResponse,"responsee");
+        console.log(cartResponse, "responsee");
 
-      cartDispatch({ type: "Remove_from_cart", payload: _id });
-    } 
-    
-    catch (err) {
-      console.error(err.cartResponse,"here");
+        cartDispatch({ type: "Remove_from_cart", payload: _id });
+      } catch (err) {
+        console.error(err.cartResponse, "here");
+      }
     }
   };
-}
+
+  const moveToWishlist = (product) => {
+    cartDispatch({ type: "Remove_from_cart", payload: product._id });
+
+    if (!isIteminList) {
+      cartDispatch({ type: "Move_to_wishList", payload: product });
+    }
+  };
 
   return (
     <div>
@@ -71,13 +77,14 @@ const Cartcard = ({ product }) =>
             </div>
             <button
               className="btn btn__primary mt-2 mr-2"
-              onClick={() =>removeFromCartHandler(_id) }
+              onClick={() => removeFromCartHandler(_id)}
             >
               Remove From Cart
             </button>
 
-            <button className="btn  btn__secondary_outline mt-2 mr-2"
-              onClick = {() => moveToWishlist()}
+            <button
+              className="btn  btn__secondary_outline mt-2 mr-2"
+              onClick={() => moveToWishlist(product)}
             >
               Move to Whitlist
             </button>
