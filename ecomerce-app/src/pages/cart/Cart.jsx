@@ -2,7 +2,9 @@ import React from "react";
 import { Cartcard } from "../../component/Cart/CartCard";
 import { PriceCard } from "../../component/Cart/PriceCard";
 import { useCart } from "../../Context/cart-context";
+import { Link } from "react-router-dom";
 import "./Cart.css";
+
 
 export const Cart = () => {
   
@@ -13,10 +15,9 @@ export const Cart = () => {
   return (
     <div>
 
-      <h3 className="text_center headtext_color font-xxl pt-3">
+      <h3 className="text_center  font-xxl pt-3">
         <strong>MY CART</strong>
       </h3>
-         <h1> helle{cartItems.length}</h1>
 
          {cartItems.length > 0 ? (
 
@@ -34,7 +35,9 @@ export const Cart = () => {
       </main>
       ): (
         <div>
-          your cart is empty go back to shoping :)
+          your cart is empty go back to shoping <Link to = "/productlisting">Product</Link>
+
+           
         </div>
       )
       

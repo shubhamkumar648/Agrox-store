@@ -3,11 +3,19 @@ import axios from "axios";
 import { ItemWishlist } from "../../Utils";
 
 const Cartcard = ({ product }) => {
-  const { img, categoryName, discountPrice, mrpPrice, discount, _id } = product;
+  const {
+    img,
+    categoryName,
+    discountPrice,
+    mrpPrice,
+    discount,
+    _id,
+    qunatity,
+  } = product;
 
   const { cartState, cartDispatch } = useCart();
 
-  const isIteminList = ItemWishlist( _id,cartState.wishList);
+  const IteminwishList = ItemWishlist(_id, cartState.wishList);
 
   const removeFromCartHandler = async (_id) => {
     {
@@ -28,9 +36,17 @@ const Cartcard = ({ product }) => {
   const moveToWishlist = (product) => {
     cartDispatch({ type: "Remove_from_cart", payload: product._id });
 
-    if (!isIteminList) {
+    if (!IteminwishList) {
       cartDispatch({ type: "Move_to_wishList", payload: product });
     }
+  };
+
+  const incrementHandler = (_id) => {
+    cartDispatch({ type: "increase_quantity", payload: _id });
+  };
+
+  const decrementHandler = (_id) => {
+    qunatity > 0 && cartDispatch({ type: "decrease_quantity", payload: _id });
   };
 
   return (
@@ -66,14 +82,21 @@ const Cartcard = ({ product }) => {
                 <strong>Quantity</strong>
               </h6>
 
-              <span className="plusminus_icon">
+              <button
+                className="plusminus_icon"
+                onClick={() => incrementHandler(_id)}
+              >
                 <i className="fa fa-solid fa-plus"></i>
-              </span>
+              </button>
 
-              <span className="count plusminus_icon">1</span>
-              <span className="plusminus_icon">
+              <span className="count plusminus_icon">{qunatity}</span>
+
+              <button
+                className="plusminus_icon"
+                onClick={() => decrementHandler(_id)}
+              >
                 <i className="fa fa-solid fa-minus"></i>
-              </span>
+              </button>
             </div>
             <button
               className="btn btn__primary mt-2 mr-2"

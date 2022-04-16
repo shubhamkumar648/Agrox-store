@@ -3,8 +3,13 @@ import { Link } from 'react-router-dom'
 import { FaHeart,FaShoppingCart } from "react-icons/fa";
 
 import  "./Navbar.module.css"
+import { useCart } from '../../Context/cart-context';
 
 export   const Navbar = ()  =>{
+
+  const {cartState} = useCart()
+  const {cartItems,wishList} = cartState
+
   return (
     <div>
         <header className="ecom_header flex">
@@ -23,17 +28,17 @@ export   const Navbar = ()  =>{
               </button>
 
             <button className="btn">
-              <Link  className='link__nostyle' to="./wishlisht"> 
+              <Link  className='link__nostyle' to="/wishList"> 
                   <FaHeart className='large_icon' />
-                <span className="list_count">6</span>
+                <span className="list_count">{wishList.length}</span>
               </Link>
             </button>
             <button className="btn">
               <a href="./pages/cartmangment.html" className="link__nostyle ">
-              <Link className='link__nostyle' to = "./cart">
+              <Link className='link__nostyle' to = "/cart">
                  <FaShoppingCart className='large_icon'/>
               </Link>
-             <span className="cart_count position">4</span>
+             <span className="cart_count position">{cartItems.length}</span>
               </a>
             </button>
           </div>
