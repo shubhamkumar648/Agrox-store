@@ -1,7 +1,6 @@
 export const cartReducerFun = (state, action) => {
   console.log(action.type);
   switch (action.type) {
-
     case "Add_to_cart":
       return {
         ...state,
@@ -17,8 +16,7 @@ export const cartReducerFun = (state, action) => {
       };
 
     case "Move_to_wishList":
-      
-      return { ...state, wishList:[...state.wishList,action.payload ] };
+      return { ...state, wishList: [...state.wishList, action.payload] };
 
     case "Delete_from_wishlist":
       return {

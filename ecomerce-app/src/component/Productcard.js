@@ -18,7 +18,7 @@ const ProductCard = ({ prodDetail }) => {
   const { cartState, cartDispatch } = useCart();
 
   const IteminyourList = IteminList(_id, cartState.cartItems);
-  const IteminyourwishList = ItemWishlist(_id,cartState.wishList);
+  const IteminyourwishList = ItemWishlist(_id, cartState.wishList);
 
   const addtoCartHandler = async (prodDetail) => {
     {
@@ -40,13 +40,12 @@ const ProductCard = ({ prodDetail }) => {
   };
 
   const addTowishlistHandler = async (prodDetail) => {
-    
-    console.log(prodDetail,"prod");
+    console.log(prodDetail, "prod");
     {
       try {
         const res = await axios.post(
           "/api/user/wishlist",
-          {product:prodDetail},
+          { product: prodDetail },
           {
             headers: {
               authorization: process.env.REACT_APP_ENCODE_TOKEN,
@@ -106,8 +105,6 @@ const ProductCard = ({ prodDetail }) => {
                 <i className="fa fa-solid fa-heart large_icon"></i>
               </span>
             )}
-
-           
           </div>
 
           <div className="categoryRaing_section flex ">
@@ -126,7 +123,7 @@ const ProductCard = ({ prodDetail }) => {
             <h6 className="discount-color fs-md">{discount}</h6>
           </div>
 
-          { IteminyourList ? (
+          {IteminyourList ? (
             <Link to="/cart">
               <button className="btn btn__primary icons_btn ecoms_btn btn_margin">
                 <span className="ml-3">
