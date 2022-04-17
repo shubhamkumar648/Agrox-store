@@ -1,0 +1,146 @@
+.cart_items {
+    gap: 2rem;
+}
+
+.cart_item_mainbody {
+    width: 38rem;
+    border: 1px solid var(--primary-color);
+}
+
+.cart_item_mainbody:hover {
+    box-shadow: var(--productcard-shadow);
+}
+
+.imagecart_container {
+    width: 39%;
+    height: auto;
+    object-fit: cover;
+}
+
+.cart_content {
+    width: 54%;
+}
+
+.cart_header {
+    justify-content: space-between;
+}
+
+.quantity_container {
+    gap: 0.4rem;
+}
+
+.plusminus_icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    text-align: center;
+    border: 1px solid var(--midgrey);
+    padding-top: 4px;
+    color: var(--dark-grey);
+}
+
+.count {
+    border-radius: 5px;
+    width: 2rem;
+}
+
+.cart_content_container {
+
+    width: 38rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart_table_content {
+    width: 100%;
+    border: 1px solid var(--primary-color);
+}
+
+.cart_table_content:hover {
+    box-shadow: var(--productcard-shadow);
+}
+
+
+
+:root {
+    --hometext-color: hsl(340, 80%, 22%);
+    --textoverlaybg-color: hsla(0, 0%, 100%, 0.432);
+    --midgrey: hsl(220, 9%, 46%);
+    --discount: hsl(352, 66%, 43%);
+    --productcard-shadow: 13px 13px 21px -5px rgba(0, 0, 0, 0.3);
+    --auth-shadow: 0 3px 8px rgb(0 0 0 / 24%)
+  }
+  
+  
+  .theme_color {
+    color: var(--primary-color);
+  }
+  
+  .flex_center {
+    justify-content: center;
+  }
+  
+  .text_center {
+    text-align: center;
+  }
+  
+  .linthrough {
+    text-decoration: line-through;
+  }
+  
+  .light {
+    color: var(----midgrey);
+    font-weight: lighter;
+  }
+  
+  .discount-color {
+    color: var(--discount);
+  }
+  
+  .wrap {
+    flex-wrap: wrap;
+  }
+  
+  table, th {
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  
+  table, td {
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 1rem;
+    border: none;
+  }
+  
+  
+  .tablerightText {
+    text-align: right;
+  }
+  
+  .tableleftText {
+    text-align: left;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .boder-btm {
+    border-bottom: 1px solid var(--primary-color);
+  }
+  
+  .place_order_btn {
+    border-radius: 2px;
+    padding: 0.4rem 14rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .position{
+    top:1px;
+    right:1.2rem
+  }

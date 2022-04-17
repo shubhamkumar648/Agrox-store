@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Productslist.css";
 import { ProductCard } from "../../component/Productcard";
 import { useProduct } from "../../Context/ProductContext/Prodctcard-context";
@@ -23,19 +22,18 @@ const CategoriesFilter = ProductcategoryFilter(category,SortedProduct)
 const ProductRatingFilter = RatingFilter(rating,CategoriesFilter)
 const ProductPriceFilter = Pricefilter(price,ProductRatingFilter) 
   
-      console.log(ProductPriceFilter,"filter dattaaaa");
+      console.log( ProductPriceFilter,"filter data");
 
   return (
     <main class="productlist_layout">
       <ProductFilter />
 
       <article class="prodctlist_card_section">
-        <>
+        
           
-           {ProductPriceFilter.map((item) => {
-            return <ProductCard prodDetail={item} key={item.id} />;
-          })} 
-        </>
+           { ProductPriceFilter.map((item) => {
+            return <ProductCard prodDetail={item} key={item._id} />;
+          }) } 
       </article>
     </main>
   );

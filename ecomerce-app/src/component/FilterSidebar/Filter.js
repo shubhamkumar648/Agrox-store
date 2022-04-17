@@ -6,6 +6,7 @@ import { PriceFilter } from "./PriceFilter";
 import { RatingFilterr } from "./RatingFilterr";
 
 export const ProductFilter = () => {
+  
   const { filterstate, filterdispatch } = useFilter();
 
   return (
@@ -14,14 +15,13 @@ export const ProductFilter = () => {
         {/* <!-- header sidebar section--> */}
         <div class="sidebar_header flex wrap pt-1">
           <h4 class="font-l mb-1"> Filters</h4>
-          <a href="#" class="link__nostyle">
             <span
               class="clearall text_center"
               onClick={() => filterdispatch({ type: "CLEAR" })}
             >
               Clear all
             </span>
-          </a>
+          
         </div>
         <hr />
 
