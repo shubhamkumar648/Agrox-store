@@ -9,8 +9,8 @@ export const PriceFilter = () => {
       <h4 class=" font-l mt-1">Price</h4>
       <label>
         <p>
-          <span className="fnt-w-600">{filterstate.price}</span>
-          to <span className="fnt-w-600">0</span>
+          <span className="fnt-w-600"> 0 </span>
+          to <span className="fnt-w-600">{filterstate.price}</span>
         </p>
         <input
           type="range"
