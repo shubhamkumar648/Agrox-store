@@ -1,7 +1,7 @@
 ## e-comerce-app
 
 
-Axrox is  a  ecommerce store built using Reactjs ,Html  , css 
+Axrox is  a  ecommerce store built using Reactjs ,Html  , css , bakend used by mockbee 
 
 ### live link [https://agrox-store-hsoach630-shubhamkumar648.vercel.app/]
 
