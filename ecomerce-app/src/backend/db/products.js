@@ -9,10 +9,10 @@ export const products = [
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
-    title: "tools",
+    categoryName: "Tools",
     mrpPrice: 5000,
     discountPrice: 5200,
-    categoryName: "Spray Machine",
+    title: "Spray Machine",
     discount: ["10% off"],
     rating: 4,
     qunatity:1
@@ -20,10 +20,10 @@ export const products = [
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542517/samples/ecomerce/assest/seedcard_vke0ta.jpg",
-    title: "Seed",
+    categoryName: "Seed",
     mrpPrice: 3500,
     discountPrice: 3150,
-    categoryName: "Carrot",
+    title: "Carrot",
     discount: ["10% off"],
     rating: 5,
     qunatity:1
@@ -31,10 +31,10 @@ export const products = [
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542516/samples/ecomerce/assest/ferilizercard_jhklrc.jpg",
-    title: "fertilizer",
+    categoryName: "Pesticide",
     mrpPrice: 4500,
     discountPrice: 3850,
-    categoryName: "Bio ferilizer",
+    title: "Root nurture",
     discount: ["10% off"],
     rating: 3,
     qunatity:1
@@ -42,10 +42,10 @@ export const products = [
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542517/samples/ecomerce/assest/pesticidecard_ajtaxq.jpg",
-    title: "fertilizer",
+    categoryName: "Fertilizer",
     mrpPrice: 5000,
     discountPrice: 4500,
-    categoryName: "Bio ferilizer ",
+    title: "Bio ferilizer ",
     discount: ["10% off"],
     rating: 4,
     qunatity:1
@@ -53,10 +53,10 @@ export const products = [
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
-    title: "tools",
+    categoryName: "Tools",
     mrpPrice: 3000,
     discountPrice: 2300,
-    categoryName: "Spray Machine",
+    title: "Spray Machine",
     discount: ["10% off"],
     rating: 3,
     qunatity:1
@@ -64,10 +64,10 @@ export const products = [
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542517/samples/ecomerce/assest/pesticidecard_ajtaxq.jpg",
-    title: "fertilizer",
+    categoryName: "Fertilizer",
     mrpPrice: 3800,
     discountPrice: 3420,
-    categoryName: "Bio fertilizer",
+    title: "Bio fertilizer",
     discount: ["10% off"],
     rating: 5,
     qunatity:1
@@ -75,10 +75,10 @@ export const products = [
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
-    title: "tools",
+    categoryName: "Tools",
     mrpPrice: 4000,
     discountPrice: 4200,
-    categoryName: "Seed",
+    title: "Seed",
     discount: ["10% off"],
     rating: 2,
     qunatity:1
