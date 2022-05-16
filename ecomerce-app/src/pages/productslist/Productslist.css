@@ -19,8 +19,8 @@
   /* main section */
   .prodctlist_card_section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(15rem,15rem));
+    
   }
   
   .product_cardMainBody {
