@@ -2,7 +2,11 @@ import { useCart } from "../Context/cart-context";
 import axios from "axios";
 import { IteminList, ItemWishlist } from "../Utils";
 import { Link } from "react-router-dom";
-
+import { useAuth } from "../Context/Auth-context";
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import {AiFillHeart} from "react-icons/ai";
+import {FiHeart} from "react-icons/fi";
 const ProductCard = ({ prodDetail }) => {
   const {
     img,
@@ -16,64 +20,84 @@ const ProductCard = ({ prodDetail }) => {
   } = prodDetail;
 
   const { cartState, cartDispatch } = useCart();
+  
+  const {user,encodedToken} = useAuth()
 
   const IteminyourList = IteminList(_id, cartState.cartItems);
   const IteminyourwishList = ItemWishlist(_id, cartState.wishList);
 
+  const navigate = useNavigate()
+  const location = useLocation()
+
   const addtoCartHandler = async (prodDetail) => {
+
+    if(user) {
     {
       try {
+
         const response = await axios.post(
           "api/user/cart",
           { prodDetail },
 
           {
-            headers: { authorization: process.env.REACT_APP_ENCODE_TOKEN },
+            headers: { authorization: encodedToken},
           }
         );
-        console.log(response);
         cartDispatch({ type: "Add_to_cart", payload: prodDetail });
       } catch (error) {
-        console.log(error);
+        console.log(error.response);
       }
     }
+
+  }
+  else {
+    navigate("/login", { replace: true, state: { from: location } })
+
+  }
   };
 
   const addTowishlistHandler = async (prodDetail) => {
-    console.log(prodDetail, "prod");
+
+    if(user) {
     {
       try {
-        const res = await axios.post(
+        const response = await axios.post(
           "/api/user/wishlist",
           { product: prodDetail },
           {
             headers: {
-              authorization: process.env.REACT_APP_ENCODE_TOKEN,
+              authorization: encodedToken,
             },
           }
         );
-        console.log(res, "add to wishlist");
 
         cartDispatch({ type: "Move_to_wishList", payload: prodDetail });
-      } catch (e) {
-        console.log(e.res);
+      } catch (error) {
+        console.log(error.response);
       }
     }
+
+  }
+
+  else {
+    navigate("/login", { replace: true, state: { from: location } })
+
+  }
   };
 
   const removefromWishlist = async (_id) => {
+    
     {
       try {
-        const removeResponse = await axios.delete(`api/user/wishlist/${_id}`, {
+        const response = await axios.delete(`api/user/wishlist/${_id}`, {
           headers: {
-            authorization: process.env.REACT_APP_ENCODE_TOKEN,
+            authorization: encodedToken,
           },
         });
-        console.log(removeResponse);
 
         cartDispatch({ type: "Delete_from_wishlist", payload: _id });
       } catch (error) {
-        console.log(error.removeResponse, "error here");
+        console.log(error.response, "error here");
       }
     }
   };
@@ -83,6 +107,7 @@ const ProductCard = ({ prodDetail }) => {
       <div className="product_cardMainBody">
         <div className="product_card">
           <img src={img} alt="img" className="img-responsive" />
+
           <div className="card_content flex mt-1 p-1">
             <h6>
               <a href="#" className="link__nostyle">
@@ -95,14 +120,17 @@ const ProductCard = ({ prodDetail }) => {
                 className="herticon"
                 onClick={() => removefromWishlist(_id)}
               >
-                <i className="fa fa-solid fa-heart large_icon"></i>
+                {/* <i className="fa fa-solid fa-heart large_icon"></i> */}
+                <AiFillHeart className="large_icon"/>
+                
               </span>
             ) : (
               <span
                 className="herticon"
                 onClick={() => addTowishlistHandler(prodDetail)}
               >
-                <i className="fa fa-solid fa-heart large_icon"></i>
+                {/* <i className="fa fa-solid fa-heart large_icon"></i> */}
+                <FiHeart className="large_icon"/>
               </span>
             )}
           </div>
