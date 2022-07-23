@@ -1,15 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaHeart,FaShoppingCart } from "react-icons/fa";
-
+import { FaHeart,FaShoppingCart,FaSignOutAlt } from "react-icons/fa";
 import  "./Navbar.module.css"
 import { useCart } from '../../Context/cart-context';
+import { useAuth } from '../../Context/Auth-context';
 
 export   const Navbar = ()  =>{
 
   const {cartState} = useCart()
   const {cartItems,wishList} = cartState
 
+  const {user,setUser} = useAuth()
+
+
+  const logoutHandler = () => {
+
+    localStorage.removeItem('token');
+    setUser(null)
+
+  }
   return (
     <div>
         <header className="ecom_header flex">
@@ -22,10 +31,15 @@ export   const Navbar = ()  =>{
             <input type="search" className="input_search" placeholder="Search" />
           </div>
           <div className="nav flex">
-            <button className="btn btn__primary">
-            
-              <Link className="link__nostyle" to= "/login"> Login</Link>
-              </button>
+          {user ? (
+        <button className="btn logout-btn font-xl fs-l" onClick={logoutHandler} ><FaSignOutAlt className="large_icon" />
+ </button>
+      ): (
+
+        <Link className="link__nostyle Login-text btn" to="/login">
+          Login
+        </Link>
+      )}
 
             <button className="btn">
               <Link  className='link__nostyle' to="/wishList"> 

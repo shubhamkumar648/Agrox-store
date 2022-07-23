@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 export const Banner = () => {
+
   return (
     <div>
  <div className="image_container img_responsive">
