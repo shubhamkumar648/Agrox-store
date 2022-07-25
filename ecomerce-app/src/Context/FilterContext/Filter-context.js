@@ -15,7 +15,7 @@ const filterContext  = createContext()
 
   }
 
-   const [filterstate,filterdispatch] = useReducer(FilterReducer,initialState)
+  const [filterstate,filterdispatch] = useReducer(FilterReducer,initialState)
 
   return (
   

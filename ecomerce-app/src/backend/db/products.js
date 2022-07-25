@@ -6,6 +6,7 @@ import { v4 as uuid } from "uuid";
  * */
 
 export const products = [
+
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
@@ -17,6 +18,7 @@ export const products = [
     rating: 4,
     qunatity:1
   },
+
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542517/samples/ecomerce/assest/seedcard_vke0ta.jpg",
@@ -28,6 +30,7 @@ export const products = [
     rating: 5,
     qunatity:1
   },
+  
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542516/samples/ecomerce/assest/ferilizercard_jhklrc.jpg",
