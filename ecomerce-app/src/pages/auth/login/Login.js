@@ -79,11 +79,7 @@ export const Login = () => {
               />
               <label for="Pass">Show Password</label>
 
-              <span className="font-xxl ">
-                <a href="#" className="link__nostyle theme_color">
-                  Forgot your password?
-                </a>
-              </span>
+              
             </div>
             <button
               className="btn btn__primary m-auto pt-2 log_btn"

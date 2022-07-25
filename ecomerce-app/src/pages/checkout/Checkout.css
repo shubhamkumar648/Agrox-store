@@ -1,0 +1,38 @@
+ 
+
+
+.chekout-maincontainer {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.chekout{
+    width: 58rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.adressMangement {
+    flex-direction: column;
+    height: 6rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;   
+     padding: 10px;
+}
+
+.radio-button-continer {
+   align-items: center;
+    display: flex;
+}
+.addressdetail{
+    
+    justify-content: space-around;
+    width: 18rem;
+    gap: 10px;
+}
+
+.text-align {
+
+  text-align: start;
+}
