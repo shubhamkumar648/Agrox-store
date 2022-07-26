@@ -1,30 +1,30 @@
 import React from 'react'
+import { useState } from 'react'
+import { Addresscard } from '../addresscard/Addresscard'
+import { Addressform } from '../addressform/Addressform'
+import { v4 as uuid } from "uuid";
+import { useAddress } from '../../Context/Address-context';
 
 export const Checkout = () => {
+    const {address} = useAddress()
+  const [isAddress, setIsaddress] = useState(false)
+
   return (
     <div className='chekout-maincontainer'>
-    
+      <div className='address-form'>
     <div className='chekout flex p-1 mt-3'>
         
         <div className='adressMangement flex'> 
-          
-          <div className='addressdetail flex '>
-                   <div className='radio-button-continer'>
-                     <input type="radio" />
-                   </div>
 
-                  <div className='adressdetail'>
-                   <h5>  Charile </h5>
-                 <p>house no: W-201,Washignton Dc,Near settle,USA, 257894</p>
-                 <p>Mobile No:-88880007</p>
-                 
-                   </div>
-              
-                
-          </div>
+           {address?.map((address) => (
+
+             <Addresscard  key= {address._id} address={address}/>
+           )
+
+           )}
          
           <button
-              className="btn btn__primary mt-2 mr-2">
+              className="btn btn__primary mt-2 mr-2" onClick={() => setIsaddress(prev => !prev)}>
               Add Address
             </button>
 
@@ -68,16 +68,35 @@ export const Checkout = () => {
              
             <div className='delvierto-container flex flex-col font-l p-1'>
             <hr />
-            <h5 className='mt-1'>DEILVERING TO</h5>
+
+                 <div>
+                 {console.log(address)}
+
+            {address?.map(({_id, name, city, addState, phoneNo, pincode, country,checked }) => 
+              
+
+              checked && (
+                       <div key={_id}>
+                      <h5 className='mt-1'>DEILVERING TO</h5>
               <hr />
-            <h5 className='text-align'> Charile </h5>
-            <p>house no: W-201,Washignton Dc,Near settle,USA, 257894</p>
-            <p className='text-align'>Mobile No:-88880007</p>
+            <h5 className='text-align pt-1'> {name} </h5>
+            <p>{`${city},${addState},${country},-${pincode}`}</p>
+            <p className='text-align'>Mobile No: {phoneNo}</p>
+                        </div>
+                     )
+             )}
+
+           </div>
+            
             </div>
 
          </div>
     </div>
     
+       {!isAddress && 
+         <Addressform setIsaddress={setIsaddress}/>
+       }
+</div>
     </div>
   )
 }

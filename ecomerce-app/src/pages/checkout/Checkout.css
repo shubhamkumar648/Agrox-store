@@ -33,6 +33,32 @@ align-items: center;
 }
 
 .text-align {
+    text-align: start;
+}
 
-  text-align: start;
+/* addressmangment form */
+
+.addressmangmnt-form {
+}
+
+.addressform {
+
+    border: 1px solid black;
+    height: 15rem;
+    width: 15rem;
+    position: absolute;
+    right: 50%;
+    top: 38%;
+}
+
+.address-form {
+
+    position: relative;
+}
+
+.addressform form input {
+
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
 }
