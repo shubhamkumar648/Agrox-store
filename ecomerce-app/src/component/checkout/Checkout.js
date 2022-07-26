@@ -80,7 +80,7 @@ export const Checkout = () => {
                         <h5 className="mt-1">DEILVERING TO</h5>
                         <hr />
                         <h5 className="text-align pt-1"> {name} </h5>
-                        <p className="tex-align">{`${city},${addState},${country},-${pincode}`}</p>
+                        <p className="text-align">{`${city},${addState},${country},-${pincode}`}</p>
                         <p className="text-align">Mobile No: {phoneNo}</p>
                       </div>
                     )
