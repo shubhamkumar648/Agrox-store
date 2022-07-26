@@ -12,9 +12,11 @@ export const Addresscard = ({address}) => {
 
     setAddress((prevAddress) => {
 
+      return (
+
         prevAddress.map((address) => address._id === _id ?
            {...address, checked: e.target.checked}:{...address,checked:false})
-    })
+    )})
    }
 
 
