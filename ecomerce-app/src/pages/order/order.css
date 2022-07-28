@@ -1,0 +1,24 @@
+.Order-maincontainer {
+       width: 25rem;
+       border: 1px solid black;
+       height: 25rem;
+       margin: 0 auto;
+       margin-top: 2rem;
+
+}
+
+.OrdereDetail {
+
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.OrderProduct {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+}

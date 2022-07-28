@@ -11,6 +11,7 @@ import {
   ProductProvider
 } from "./Context";
 import { AuthProvider } from "./Context/Auth-context";
+import { OrderProvider } from "./Context/Order-context";
 // Call make Server
 makeServer();
 
@@ -22,7 +23,9 @@ ReactDOM.render(
           <FilterProvider>
             <CartProvider>
               <AddressProvider>
-                <App />
+              <OrderProvider>
+              <App />
+             </OrderProvider>
               </AddressProvider>
             </CartProvider>
           </FilterProvider>
