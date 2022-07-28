@@ -17,8 +17,7 @@ export const RoutPath = () => {
     <Route path ="/signup" element ={<Signup/>}/>
     
     <Route path = "/checkout"  element={<CheckoutPage/>}/>
-
-    <Route path ="/mockman" element ={<Mockman/>}/>
+      <Route path ="/mockman" element ={<Mockman/>}/>
 
    </Routes>
     
