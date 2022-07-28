@@ -4,10 +4,20 @@ import { Addresscard } from "../addresscard/Addresscard";
 import { Addressform } from "../addressform/Addressform";
 import { v4 as uuid } from "uuid";
 import { useAddress } from "../../Context/Address-context";
+import { useCart } from "../../Context/cart-context";
+import { PriceItem } from "../../Utils";
 
 export const Checkout = () => {
   const { address } = useAddress();
   const [isAddress, setIsaddress] = useState(false);
+  
+  const {cartState,cartDispatch} =  useCart()
+    const {cartItems} = cartState
+    const totalPrice = PriceItem(cartItems)
+    const discount = (totalPrice/10);
+    const totalAmount = (totalPrice + 100 - discount)
+
+  
 
   return (
     <div className="chekout-maincontainer">
@@ -29,16 +39,19 @@ export const Checkout = () => {
           <div className="orderdetail flex flex-col">
             <h5> Order Detail</h5>
             <hr />
-            <table>
+            {cartItems.map(({_id,qunatity,discountPrice,categoryName}) => (
+
+            <table key={_id}>
               <tr className="boder-btm">
                 <th className="tableleftText">Item detail</th>
                 <th className="tablerightText">Amount</th>
               </tr>
               <tr>
-                <td className="tableleftText">Aspee MAchine - Price item(1)</td>
-                <td className="tablerightText">100</td>
+                <td className="tableleftText"> {categoryName} -item({qunatity})</td>
+                <td className="tablerightText">{discountPrice}</td>
               </tr>
             </table>
+            ))}
             <hr />
             <h5>Billing</h5>
             <hr />
@@ -47,7 +60,7 @@ export const Checkout = () => {
                 <td className="tableleftText">
                   Discount <small className="discount-color">(10%)</small>
                 </td>
-                <td className="tablerightText">999</td>
+                <td className="tablerightText">{discount}</td>
               </tr>
               <tr className="boder-btm">
                 <td className="tableleftText">Delivery charge</td>
@@ -55,7 +68,7 @@ export const Checkout = () => {
               </tr>
               <tr>
                 <td className="tableleftText fs-l font-xl">Total:</td>
-                <td className="tablerightText fs-l font-xl">500</td>
+                <td className="tablerightText fs-l font-xl">{totalAmount}</td>
               </tr>
             </table>
 
