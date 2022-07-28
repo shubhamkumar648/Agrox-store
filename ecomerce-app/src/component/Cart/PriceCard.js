@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useCart } from '../../Context/cart-context'
 import { PriceItem, TotalItem } from '../../Utils'
 
@@ -42,8 +43,8 @@ const totalAmount = (totalPrice + 100 - discount)
                 <td className="tablerightText fs-l font-xl">{totalAmount}</td>
               </tr>
             </table>
-            <button className="btn btn__primary  place_order_btn">
-              Place Order
+            <button className="btn btn__primary  place_order_btn" onClick={()=>  console.log("hello")}>
+              <Link to='/checkout' className='link__nostyle'> Place Order</Link>
             </button>
           </div>
     </div>

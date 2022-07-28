@@ -32,7 +32,8 @@ const ProductCard = ({ prodDetail }) => {
   const addtoCartHandler = async (prodDetail) => {
 
     if(user) {
-    {
+      
+    
       try {
 
         const response = await axios.post(
@@ -47,7 +48,7 @@ const ProductCard = ({ prodDetail }) => {
       } catch (error) {
         console.log(error.response);
       }
-    }
+    
 
   }
   else {
@@ -59,7 +60,7 @@ const ProductCard = ({ prodDetail }) => {
   const addTowishlistHandler = async (prodDetail) => {
 
     if(user) {
-    {
+    
       try {
         const response = await axios.post(
           "/api/user/wishlist",
@@ -75,7 +76,7 @@ const ProductCard = ({ prodDetail }) => {
       } catch (error) {
         console.log(error.response);
       }
-    }
+    
 
   }
 
@@ -87,7 +88,7 @@ const ProductCard = ({ prodDetail }) => {
 
   const removefromWishlist = async (_id) => {
     
-    {
+    
       try {
         const response = await axios.delete(`api/user/wishlist/${_id}`, {
           headers: {
@@ -99,7 +100,7 @@ const ProductCard = ({ prodDetail }) => {
       } catch (error) {
         console.log(error.response, "error here");
       }
-    }
+    
   };
 
   return (
