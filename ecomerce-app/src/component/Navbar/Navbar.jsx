@@ -27,9 +27,7 @@ export   const Navbar = ()  =>{
             <Link className="link__nostyle fs-xl brand_color" to = "/" >Agrox Store</Link>
 
           </div>
-          <div className="input_Search_container">
-            <input type="search" className="input_search" placeholder="Search" />
-          </div>
+          
           <div className="nav flex">
           {user ? (
         <button className="btn logout-btn font-xl fs-l" onClick={logoutHandler} ><FaSignOutAlt className="large_icon" />

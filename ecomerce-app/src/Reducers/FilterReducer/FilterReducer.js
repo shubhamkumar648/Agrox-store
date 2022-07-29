@@ -20,6 +20,7 @@ export const FilterReducer = (state, action) => {
     case "FILTER_BY_PRICE":
       return { ...state, price: action.payload };
 
+     
     case "CLEAR":
       return {
         sortBy: "",

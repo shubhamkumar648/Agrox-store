@@ -1,59 +1,52 @@
-import React from 'react'
-import pesticides from "../../assest/pesticide.jpg"
-import fertilizer from "../../assest/fertilizer.jpg";
-import seed from "../../assest/seed.jpg";
-import tool from "../../assest/tools.jpg";
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-export  const Categories = () => {
+import { useAxios } from "../../Utils";
+import { Categoriesitem } from "./Categoriesitem";
+
+export const Categories = () => {
+
+ const { apiData,loading } = useAxios("/api/categories");
+ const { categories } = apiData;
+ console.log(categories);
   return (
     <div>
+      <h3 className="text_center headtext_color2 mt-2">VIEW ALL PRODUCTS</h3>
+      <div className="category_container">
+        {/* {
+          .map(({linkPath,categoryName, categoryImg }) => {
+            return (
+              <div key={categoryName} onClick={()=> navigate(`${linkPath}/${categoryName}`, { replace: true })}>
+                <div
+                  className="categories"
+                 
+                >
+                    <span className="text-overlay fs-l">{categoryName}</span>
+                    <img
+                      src={categoryImg}
+                      alt="img"
+                      className="img_responsive cateorgies_image"
+                    />
+                </div>
+              </div>
+            );
+          })} */}
 
-<h3 className="text_center headtext_color2 mt-2">VIEW ALL PRODUCTS</h3>
-          <div className="category_container">
-            <div className="categories">
-            <Link to='/productlisting'>
-                <span className="text-overlay fs-l">Fertilizer</span>
-                <img
-                  src={fertilizer}
-                  alt="img"
-                  className="img_responsive cateorgies_image"
-                />
-              </Link>
-            </div>
 
-            {/* <!-- / product category section --> */}
-            <div className="categories">
-              <Link to='/productlisting'>
-                <span className="text-overlay fs-l">Pesticide</span>
-                <img
-                  src={pesticides}
-                  alt="img"
-                  className="img_responsive cateorgies_image"
-                />
+
+          {loading ? (
+            <h3>loading....</h3>
+        ) : (
+          categories.map((itemAgri) => {
+            return (
+              <Link to="/productlisting">
+                <Categoriesitem itemDetail={itemAgri} />
               </Link>
-            </div>
-            <div className="categories">
-            <Link to='/productlisting'>
-                <span className="text-overlay fs-l">Seed</span>
-                <img
-                  src={seed}
-                  alt="img"
-                  className="img_responsive cateorgies_image"
-                />
-              </Link>
-            </div>
-            <div className="categories">
-            <Link to='/productlisting'>
-                <span className="text-overlay fs-l">Tools</span>
-                <img
-                  src={tool}
-                  alt="img"
-                  className="img_responsive cateorgies_image"
-                />
-              </Link>
-            </div>
-          </div>
+            );
+          })
+        )}
+
+         </div>
     </div>
-  )
-}
+  );
+};

@@ -19,7 +19,7 @@ export const RoutPath = () => {
 
     <Route path = "/checkout"  element={<RequireAuth> <CheckoutPage/></RequireAuth>}/>
     <Route path ="/mockman" element ={<Mockman/>}/>
-
+  
    </Routes>
     
     </div>
