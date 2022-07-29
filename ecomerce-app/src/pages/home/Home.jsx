@@ -10,6 +10,8 @@ export const Home = () => {
         <main className="main__container">
           <Banner />
           <Categories />
+
+
         </main>
         <Footer />
       </>
