@@ -6,6 +6,9 @@ import { v4 as uuid } from "uuid";
 import { useAddress } from "../../Context/Address-context";
 import { useCart } from "../../Context/cart-context";
 import { PriceItem } from "../../Utils";
+import { useOrder } from "../../Context/Order-context";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../Context/Auth-context";
 
 export const Checkout = () => {
   const { address } = useAddress();
@@ -16,8 +19,72 @@ export const Checkout = () => {
     const totalPrice = PriceItem(cartItems)
     const discount = (totalPrice/10);
     const totalAmount = (totalPrice + 100 - discount)
+  const{orderDispatch} = useOrder()
+  const { user } = useAuth();
+  console.log(user);
 
-  
+  const navigate =  useNavigate()
+
+
+
+  const loadScript = (src) => {
+   
+  return new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.body.appendChild(script)
+  })
+
+  }
+
+  const displayRazorPay = async (amount) =>  {
+
+  const response = await loadScript("https://checkout.razorpay.com/v1/checkout.js")
+
+  if (!response) {
+    alert("Failed to load RazorPay SDK 😢");
+    return;
+  }
+
+  const options = {
+    key: "rzp_test_BSk6yoiCabuxa3",
+    currency: "INR",
+    amount: amount * 100,
+    name: "Agrox-store",
+    description: "Thank you  for purchasing",
+    image: "/logo192.png",
+
+    handler: function ({ razorpay_payment_id }) {
+      const newOrder = {
+        paymentId: razorpay_payment_id,
+        orderId: uuid(),
+        totalAmount: amount,
+        items: cartItems,
+        address: address.find((address) => address.checked),
+      };
+      orderDispatch({ type: "SAVE_ORDER", payload: newOrder });
+      if (razorpay_payment_id) {
+        cartDispatch({ type: "CLEAR_CART" });
+        navigate("/order");
+      }
+    },
+    prefill: {
+       name: `${user.firstName} ${user.lastName}`,
+       email: `${user.email}`,
+       contact: "8888520001",
+    },
+    theme: {
+      color: "#49a0eb",
+    },
+  };
+  const paymentObject = new window.Razorpay(options);
+  paymentObject.open();
+
+  }
+
+
 
   return (
     <div className="chekout-maincontainer">
@@ -47,7 +114,7 @@ export const Checkout = () => {
                 <th className="tablerightText">Amount</th>
               </tr>
               <tr>
-                <td className="tableleftText"> {categoryName} -item({qunatity})</td>
+                <td className="tableleftText"> {categoryName} * item({qunatity})</td>
                 <td className="tablerightText">{discountPrice}</td>
               </tr>
             </table>
@@ -100,6 +167,8 @@ export const Checkout = () => {
                 )}
               </div>
             </div>
+            <button className="btn btn__primary" onClick={() => displayRazorPay(totalAmount)}>Proceed to Pay</button>
+
           </div>
         </div>
 
