@@ -7,9 +7,12 @@ export const Categoriesitem = ({itemDetail}) => {
    const navigate =  useNavigate()
    const {filterdispatch} = useFilter()
   return (
+
     <div
     className="categories"
+  
     onClick={() => {
+        filterdispatch({type: "CLEAR"})
         filterdispatch({type:"FILTER_BY_CATEGORY", payload: itemDetail.categoryName})
             navigate("./productlisting")
         }}
