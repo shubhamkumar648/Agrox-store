@@ -1,8 +1,18 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { useFilter } from '../../Context/FilterContext/Filter-context'
 
 
 export const Banner = () => {
+
+  const navigate =  useNavigate()
+  const {filterdispatch} = useFilter()  
+
+  const shopHandler = () => {
+       filterdispatch({type: "CLEAR"})
+       navigate("/productlisting")
+  }
 
   return (
     <div>
@@ -15,11 +25,11 @@ export const Banner = () => {
             </h5>
 
             <div className="shopNow">
-              <button className="btn btn__primary m-auto " styles="m-auto">
+              {/* <button className="" styles="m-auto"> */}
                 
-                <Link className='link__nostyle' to='/productlisting'>Shop Now</Link>
+                <button className=' btn btn__primary m-auto ' onClick={shopHandler}>Shop Now</button>
 
-              </button>
+              {/* </button> */}
             </div>
           </div>
 
