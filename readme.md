@@ -16,14 +16,14 @@ Agrox stor  is  a  ecommerce app  where youcan buy all ferilizer product
 
 #### Features Present
 <ul>
-<li> Product Listing<li>
+<li> Product Listing</li>
  <li>Filter Products by</li>
   <li> Category</li>
   <li>Discount</li>
   <li> Price</li>
   <li>Rating</li>
 <li>Cart Management</li>
-<li>Wishlist Management<li>
+<li>Wishlist Management</li>
 <li> Authentication</li>
 <li> Payment Integration</li>
 
