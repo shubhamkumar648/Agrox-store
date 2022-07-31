@@ -5,18 +5,23 @@ import "./order.css"
 
 export const Order = () => {
 
-    // const {order} = useOrder()
-    // const { orderId, paymentId, totalAmount, address, items } = order;
+    //  const {order} = useOrder()
+    //  const { orderId, paymentId, totalAmount, address, items } = order;
+    //  const { name, city, addState, country, pincode, phoneNo } = address ?? {};
 
-    // const navigate =  useNavigate()
-    // const { name, city, addState, country, pincode, phone } = address ?? {};
+     const navigate =  useNavigate()
+
+
+     const shooMoreHAndler = () => {
+
+      navigate("/productlisting")
+     }
 
   return (
       
-          <>
+          <div>
 
-              <h3>congratulation</h3>
-        {/* <h2>Congratulation</h2>
+              {/* <h3>congratulation</h3>
      <div className='Order-maincontainer flex'>
 
         <div className='OrdereDetail'>
@@ -27,22 +32,28 @@ export const Order = () => {
        <h3>  Delviering to:</h3>
             <h3 className="font-l f-s mb-s">{name}</h3>
             <p className="font-l f-s mb-s">{`${city},${addState}, ${country} - ${pincode}`}</p>
-            <p className="font-l f-s mb-s">Phone Number : {phone}</p>
+            <p className="font-l f-s mb-s">Phone Number : {phoneNo}</p>
             </div>
         </div>
         <div className='OrderProduct'>
-        {items?.map(({ _id, title, image, newPrice, quantity }) => (
+        {items?.map(({ _id, title, image, discountPrice, qunatity }) => { 
+          
+          
+          return(
+                    
               <div key = {_id}>
               <image src={image} alt={title}/>
                  <div>
                <h5>{title}</h5>
-               <h5>Price:{newPrice}</h5>
-               <h5>qyantity:{quantity}</h5>
+               <h5>Price:{discountPrice}</h5>
+               <h5>qyantity:{qunatity}</h5>
                </div>
         </div>
-        ))} */}
-    {/* </div>
-    </div> */}
-    </>
+        )})} 
+    </div>
+    </div>  */}
+            <h4 style={{color: "green"}} className="pb-m"> Congtaulation  🎉 Payment sucessfully </h4>
+    <button className='btn btn_primary' onClick={shooMoreHAndler}>Shop More</button>
+    </div>
   )
 }

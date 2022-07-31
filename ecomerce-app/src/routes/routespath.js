@@ -15,7 +15,7 @@ export const RoutPath = () => {
     <Route path ="/cart" element ={ <RequireAuth> <Cart/> </RequireAuth>}/>
     <Route path ="/login" element ={<Login/>}/>
     <Route path ="/signup" element ={<Signup/>}/>
-    <Route path ="/order" element ={<RequireAuth><Order/></RequireAuth>}/>
+    <Route path ="/order" element ={<RequireAuth> <Order/></RequireAuth>}/>
 
     <Route path = "/checkout"  element={<RequireAuth> <CheckoutPage/></RequireAuth>}/>
     <Route path ="/mockman" element ={<Mockman/>}/>
