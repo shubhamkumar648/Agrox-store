@@ -37,7 +37,7 @@ export const Addressform = ({setIsaddress}) => {
     <div className="addressform-container" onClick={(e) => e.stopPropagation()}>
 
     <div className="addressform flex flex-col">
-      <form onSubmit={addressHandler}>
+      <form  className="addressForm" onSubmit={addressHandler}>
         <label>Name:</label>
 
         <input
@@ -53,6 +53,7 @@ export const Addressform = ({setIsaddress}) => {
 
         <input
           type="text"
+
           value={city}
           onChange={(e) =>
             dispatch({ type: "SET_CITY", payload: e.target.value })
@@ -100,10 +101,15 @@ export const Addressform = ({setIsaddress}) => {
           required
         />
 
-        <button type="submit">Add to new Address</button>
+        <button type="submit"
+        className="btn btn__primary m-auto log_btn "
+
+        >Add to new Address</button>
 
         <button
           type="submit"
+          className="btn btn__primary m-auto log_btn "
+
           onClick={(e) =>
             dispatch({ type: "SET_DUMMYADDRESS", payload: e.target.value })
           }

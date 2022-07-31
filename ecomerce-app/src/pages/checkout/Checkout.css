@@ -53,11 +53,26 @@ align-items: center;
 .addressform {
 
     border: 1px solid black;
-    height: 15rem;
-    width: 15rem;
+    height: 25rem;
+    width: 20rem;
     position: absolute;
     right: 50%;
-    top: 38%;
+    top: 28%;
+    background-color: white;
+    
+}
+
+.address-mainContainer{
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.addressForm{
+    padding: 1rem;
 }
 
 .address-form {
@@ -68,11 +83,18 @@ align-items: center;
 
 .addressform form input {
 
-    border: none;
-    outline: none;
-    border-bottom: 1px solid black;
+    padding: 0.3rem;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: 1px solid var(--dark-grey);
+   
 }
 
+.ddressform form button {
+
+    padding: 0 0.4rem;
+}
 .orderdetail {
 
     width: 40rem;
