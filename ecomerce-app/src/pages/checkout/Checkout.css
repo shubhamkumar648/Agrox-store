@@ -11,20 +11,31 @@ align-items: center;
     width: 58rem;
     border: 1px solid black;
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
+
+}
+
+.leftsidecontainer {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .adressMangement {
-    flex-direction: column;
+    /* flex-direction: column; */
     height: 6rem;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;   
      padding: 10px;
+
 }
 
 .radio-button-continer {
    align-items: center;
     display: flex;
 }
+
+
 .addressdetail{
     
     justify-content: space-around;
@@ -38,27 +49,53 @@ align-items: center;
 
 /* addressmangment form */
 
-.addressmangmnt-form {
-}
 
 .addressform {
 
     border: 1px solid black;
-    height: 15rem;
-    width: 15rem;
+    height: 25rem;
+    width: 20rem;
     position: absolute;
     right: 50%;
-    top: 38%;
+    top: 28%;
+    background-color: white;
+    
+}
+
+.address-mainContainer{
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.addressForm{
+    padding: 1rem;
 }
 
 .address-form {
 
     position: relative;
+
 }
 
 .addressform form input {
 
-    border: none;
-    outline: none;
-    border-bottom: 1px solid black;
+    padding: 0.3rem;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: 1px solid var(--dark-grey);
+   
+}
+
+.ddressform form button {
+
+    padding: 0 0.4rem;
+}
+.orderdetail {
+
+    width: 40rem;
 }

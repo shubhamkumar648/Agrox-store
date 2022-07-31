@@ -90,19 +90,24 @@ export const Checkout = () => {
     <div className="chekout-maincontainer">
       <div className="address-form">
         <div className="chekout flex p-1 mt-3">
-          <div className="adressMangement flex">
+        <div className="leftsidecontainer">
             {address?.map((address) => (
+              <div className="adressMangement ">
+
               <Addresscard key={address._id} address={address} />
+              </div>
+
             ))}
 
+                 <div className="flex">
             <button
               className="btn btn__primary mt-2 mr-2"
               onClick={() => setIsaddress((prev) => !prev)}
             >
               Add Address
             </button>
-          </div>
-
+                </div>
+                </div>
           <div className="orderdetail flex flex-col">
             <h5> Order Detail</h5>
             <hr />

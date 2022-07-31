@@ -1,18 +1,18 @@
 
 export const orderReducer = (action,state) => {
+    const {type,payload} = action;
 
-    switch(action.type) {
+    switch(type) {
 
         case  "SAVE_ORDER":
         return {
-            ...state,order: action.payload
+            ...state,order: payload
         };
         case "CLEAR_ORDER":
             return {
                 ...state,order: {}
             }
 
-            default:  return state
     } 
     
 

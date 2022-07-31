@@ -29,7 +29,7 @@ export const Addresscard = ({ address }) => {
         />
       </div>
 
-      <div className="adressdetail">
+      <div>
         <h5> {name} </h5>
         <p>{`${city},${addState},${country},-${pincode}`}</p>
 
