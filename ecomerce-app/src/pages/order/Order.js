@@ -52,8 +52,8 @@ export const Order = () => {
         )})} 
     </div>
     </div>  */}
-            <h4 style={{color: "green"}} className="pb-m"> Congtaulation  🎉 Payment sucessfully </h4>
-    <button className='btn btn_primary' onClick={shooMoreHAndler}>Shop More</button>
+            <h3 style={{color: "green"}} className="pb-2"> Congtaulation  🎉 Payment sucessfully </h3>
+    <button className='btn btn__primary' onClick={shooMoreHAndler}>Shop More</button>
     </div>
   )
 }
