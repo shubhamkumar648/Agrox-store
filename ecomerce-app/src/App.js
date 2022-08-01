@@ -1,5 +1,5 @@
 import "./App.css";
-import { Navbar } from "./component";
+import { Navbar, Toast } from "./component";
 import { RoutPath } from "./routes/routespath";
 
 
@@ -9,6 +9,7 @@ import { RoutPath } from "./routes/routespath";
     <div className="App">
 
     <Navbar/>
+    <Toast/>
     <RoutPath/>
     </div>
   );

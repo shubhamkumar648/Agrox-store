@@ -1,6 +1,7 @@
 import { useCart } from "../../Context/cart-context";
 import axios from "axios";
 import { ItemWishlist } from "../../Utils";
+import { useToast } from "../../Utils/useToast";
 
 const Cartcard = ({ product }) => {
   const {
@@ -17,6 +18,8 @@ const Cartcard = ({ product }) => {
 
   const IteminwishList = ItemWishlist(_id, cartState.wishList);
 
+  const {showToast} = useToast()
+
   const removeFromCartHandler = async (_id) => {
     {
       try {
@@ -27,8 +30,12 @@ const Cartcard = ({ product }) => {
         console.log(cartResponse, "responsee");
 
         cartDispatch({ type: "Remove_from_cart", payload: _id });
+        showToast("Success", "item Removed from Cart");
+
       } catch (err) {
         console.error(err.cartResponse, "here");
+        showToast("error", "Something went wrong, please try again.");
+
       }
     }
   };
@@ -36,8 +43,11 @@ const Cartcard = ({ product }) => {
   const moveToWishlist = (product) => {
     cartDispatch({ type: "Remove_from_cart", payload: product._id });
 
+
     if (!IteminwishList) {
       cartDispatch({ type: "Move_to_wishList", payload: product });
+      showToast("success", `${product.title} is moved to whisList`);
+
     }
   };
 
