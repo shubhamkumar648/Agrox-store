@@ -3,6 +3,7 @@ import axios from "axios";
 import { ItemWishlist } from "../../Utils";
 import { useToast } from "../../Utils/useToast";
 
+
 const Cartcard = ({ product }) => {
   const {
     img,
@@ -30,7 +31,6 @@ const Cartcard = ({ product }) => {
         console.log(cartResponse, "responsee");
 
         cartDispatch({ type: "Remove_from_cart", payload: _id });
-        showToast("Success", "item Removed from Cart");
 
       } catch (err) {
         console.error(err.cartResponse, "here");

@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import {AiFillHeart} from "react-icons/ai";
 import {FiHeart} from "react-icons/fi";
+import { useToast } from "../../src/Utils/useToast";
+
 const ProductCard = ({ prodDetail }) => {
   const {
     img,
@@ -28,6 +30,9 @@ const ProductCard = ({ prodDetail }) => {
 
   const navigate = useNavigate()
   const location = useLocation()
+  const {showToast} = useToast()
+  
+       
 
   const addtoCartHandler = async (prodDetail) => {
 
@@ -45,8 +50,12 @@ const ProductCard = ({ prodDetail }) => {
           }
         );
         cartDispatch({ type: "Add_to_cart", payload: prodDetail });
+        showToast("success", `${prodDetail.title} added in Cart`);
+
       } catch (error) {
         console.log(error.response);
+        showToast("error", "Something went wrong, please try again.");
+
       }
     
 
@@ -73,7 +82,11 @@ const ProductCard = ({ prodDetail }) => {
         );
 
         cartDispatch({ type: "Move_to_wishList", payload: prodDetail });
+        showToast("success", `${prodDetail.title} added in WishList.`);
+
       } catch (error) {
+        showToast("error", "Something went wrong, please try again.");
+
         console.log(error.response);
       }
     
@@ -97,8 +110,12 @@ const ProductCard = ({ prodDetail }) => {
         });
 
         cartDispatch({ type: "Delete_from_wishlist", payload: _id });
+        showToast("success", `${prodDetail.title} is removed from WishList.`);
+
       } catch (error) {
         console.log(error.response, "error here");
+        showToast("error", "Something went wrong, please try again.");
+
       }
     
   };
