@@ -7,7 +7,7 @@ import "./toast.css"
  export const Toast = () => {
     return (
       <ToastContainer
-     position="top-right"
+     position="bottom-right"
       autoClose={2000}
       hideProgressBar={false}
       newestOnTop={false}

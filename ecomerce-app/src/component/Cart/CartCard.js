@@ -34,6 +34,8 @@ const Cartcard = ({ product }) => {
         console.log(cartResponse, "responsee");
 
         cartDispatch({ type: "Remove_from_cart", payload: _id });
+        showToast("success", `${product.title} is removed from Cart`);
+
 
       } catch (err) {
         console.error(err.cartResponse, "here");
