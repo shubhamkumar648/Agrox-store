@@ -2,6 +2,7 @@ import { useCart } from "../../Context/cart-context";
 import axios from "axios";
 import { ItemWishlist } from "../../Utils";
 import { useToast } from "../../Utils/useToast";
+import { useAuth } from "../../Context/Auth-context";
 
 
 const Cartcard = ({ product }) => {
@@ -21,11 +22,13 @@ const Cartcard = ({ product }) => {
 
   const {showToast} = useToast()
 
+    const {encodedToken} = useAuth()
+
   const removeFromCartHandler = async (_id) => {
     {
       try {
         const cartResponse = await axios.delete(`api/user/wishlist/${_id}`, {
-          headers: { authorization: process.env.REACT_APP_ENCODE_TOKEN },
+          headers: { authorization: encodedToken},
         });
 
         console.log(cartResponse, "responsee");
