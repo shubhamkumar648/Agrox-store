@@ -1,6 +1,9 @@
 import { useCart } from "../../Context/cart-context";
 import axios from "axios";
 import { ItemWishlist } from "../../Utils";
+import { useToast } from "../../Utils/useToast";
+import { useAuth } from "../../Context/Auth-context";
+
 
 const Cartcard = ({ product }) => {
   const {
@@ -17,18 +20,27 @@ const Cartcard = ({ product }) => {
 
   const IteminwishList = ItemWishlist(_id, cartState.wishList);
 
+  const {showToast} = useToast()
+
+    const {encodedToken} = useAuth()
+
   const removeFromCartHandler = async (_id) => {
     {
       try {
         const cartResponse = await axios.delete(`api/user/wishlist/${_id}`, {
-          headers: { authorization: process.env.REACT_APP_ENCODE_TOKEN },
+          headers: { authorization: encodedToken},
         });
 
         console.log(cartResponse, "responsee");
 
         cartDispatch({ type: "Remove_from_cart", payload: _id });
+        showToast("success", `${product.title} is removed from Cart`);
+
+
       } catch (err) {
         console.error(err.cartResponse, "here");
+        showToast("error", "Something went wrong, please try again.");
+
       }
     }
   };
@@ -36,8 +48,11 @@ const Cartcard = ({ product }) => {
   const moveToWishlist = (product) => {
     cartDispatch({ type: "Remove_from_cart", payload: product._id });
 
+
     if (!IteminwishList) {
       cartDispatch({ type: "Move_to_wishList", payload: product });
+      showToast("success", `${product.title} is moved to whisList`);
+
     }
   };
 

@@ -4,6 +4,7 @@ import { FaHeart,FaShoppingCart,FaSignOutAlt } from "react-icons/fa";
 import  "./Navbar.module.css"
 import { useCart } from '../../Context/cart-context';
 import { useAuth } from '../../Context/Auth-context';
+import { useToast } from '../../Utils/useToast';
 
 export   const Navbar = ()  =>{
 
@@ -11,12 +12,14 @@ export   const Navbar = ()  =>{
   const {cartItems,wishList} = cartState
 
   const {user,setUser} = useAuth()
-
+const {showToast}  =  useToast()
 
   const logoutHandler = () => {
 
     localStorage.removeItem('token');
     setUser(null)
+    showToast("success", "Logged out!");
+
 
   }
   return (

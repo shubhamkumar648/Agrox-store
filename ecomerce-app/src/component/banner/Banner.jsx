@@ -18,7 +18,7 @@ export const Banner = () => {
     <div>
  <div className="image_container img_responsive">
             <h3 className="text_center headtext_color lh-l pt-3 font-xxl">
-              Welcom to Agrox Store
+              Welcome to Agrox Store
             </h3>
             <h5 className="text_center headtext_color lh-l font-xxl">
               We provide Quality Agriculture Products at a reliable price

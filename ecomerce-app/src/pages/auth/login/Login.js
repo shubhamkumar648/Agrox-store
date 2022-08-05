@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useAuth } from "../../../Context/Auth-context";
 import "./login.css";
 import axios from "axios";
+import { useToast } from "../../../Utils/useToast";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,6 +15,8 @@ export const Login = () => {
   const { setUser } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+
+ const{showToast}  = useToast()
 
   const loginHandler = async (e) => {
     e.preventDefault();
@@ -25,9 +28,14 @@ export const Login = () => {
 
       localStorage.setItem("token", response.data.encodedToken);
       setUser(response.data.foundUser);
+      showToast("success", "Logged In!");
+
       navigate(location.state?.from?.pathname || "/", { replace: true });
+
     } catch (error) {
       console.log(error.response);
+      showToast("error", error.response.data.errors[0]);
+
     }
   };
 
