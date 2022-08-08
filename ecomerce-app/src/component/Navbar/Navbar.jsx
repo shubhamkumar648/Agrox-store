@@ -45,16 +45,15 @@ const {showToast}  =  useToast()
             <button className="btn">
               <Link  className='link__nostyle' to="/wishList"> 
                   <FaHeart className='large_icon' />
-                <span className="list_count">{wishList.length}</span>
+              {wishList.length > 0 &&  <span className="list_count">{wishList.length}</span> }
               </Link>
             </button>
             <button className="btn">
-              <a href="./pages/cartmangment.html" className="link__nostyle ">
               <Link className='link__nostyle' to = "/cart">
                  <FaShoppingCart className='large_icon'/>
               </Link>
-             <span className="cart_count position">{cartItems.length}</span>
-              </a>
+           {cartItems.length > 0 &&  <span className="cart_count position">{cartItems.length}</span>}
+              
             </button>
           </div>
         </header>
