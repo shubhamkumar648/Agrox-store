@@ -24,7 +24,7 @@ export const CategoriesFilter = () => {
                 onChange={(e) => filterdispatch({type:"FILTER_BY_CATEGORY",payload: e.target.value})}
 
                 />
-                <label for="fertilizer">Ferilizer</label>
+                <label for="fertilizer"> Ferilizer</label>
                 <br />
               </li>
               <li>
@@ -47,7 +47,7 @@ export const CategoriesFilter = () => {
                 onChange={(e) =>filterdispatch({type:"FILTER_BY_CATEGORY",payload: e.target.value})}
 
                 />
-                <label for="Seed">Seed</label>
+                <label for="Seed"> Seed</label>
                 <br />
               </li>
               <li>
@@ -58,7 +58,7 @@ export const CategoriesFilter = () => {
                 onChange={(e) => filterdispatch({type:"FILTER_BY_CATEGORY",payload: e.target.value})}
 
                  />
-                <label for="toolse1">Tools</label>
+                <label for="toolse1"> Tools</label>
                 <br />
               </li>
             </ul>

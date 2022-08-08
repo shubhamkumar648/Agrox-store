@@ -62,7 +62,7 @@
     color: var(--rating-color);
   }
 
-  .rating_star_container {
+  .rating_star_container{
     height: 2rem;
     width: 3rem;
     border: 1px solid black ;
@@ -71,3 +71,5 @@
     text-align: center;
     padding-top: 0.5rem
   }
+
+  
