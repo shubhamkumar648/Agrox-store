@@ -33,7 +33,7 @@ export const products = [
   
   {
     _id: uuid(),
-    img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542516/samples/ecomerce/assest/ferilizercard_jhklrc.jpg",
+    img: "https://res.cloudinary.com/e-comerce/image/upload/v1659976369/samples/ecomerce/assest/urea_gt88ry.jpg",
     categoryName: "Fertilizer",
     mrpPrice: 4500,
     discountPrice: 3850,
@@ -42,9 +42,11 @@ export const products = [
     rating: 3,
     qunatity:1
   },
+
+
   {
     _id: uuid(),
-    img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542517/samples/ecomerce/assest/pesticidecard_ajtaxq.jpg",
+    img: "https://res.cloudinary.com/e-comerce/image/upload/v1659976530/samples/ecomerce/assest/big_tdjddn.webp",
     categoryName: "Fertilizer",
     mrpPrice: 5000,
     discountPrice: 4500,
@@ -55,15 +57,27 @@ export const products = [
   },
   {
     _id: uuid(),
-    img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
+    img: "https://res.cloudinary.com/e-comerce/image/upload/v1659975935/samples/ecomerce/assest/tool2_yepcno.jpg",
     categoryName: "Tools",
     mrpPrice: 3000,
     discountPrice: 2300,
-    title: "Spray Machine",
+    title: "Gardening Hoe",
     discount: ["10% off"],
     rating: 3,
     qunatity:1
   },
+  {
+    _id: uuid(),
+    img: "https://res.cloudinary.com/e-comerce/image/upload/v1659980488/samples/ecomerce/assest/flower.jpg_dmt9rh.jpg",
+    categoryName: "Seed",
+    mrpPrice: 1000,
+    discountPrice: 900,
+    title: "flower",
+    discount: ["10% off"],
+    rating: 5,
+    qunatity:1
+  },
+
   {
     _id: uuid(),
     img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542517/samples/ecomerce/assest/pesticidecard_ajtaxq.jpg",
@@ -75,13 +89,25 @@ export const products = [
     rating: 5,
     qunatity:1
   },
+
   {
     _id: uuid(),
-    img: "https://res.cloudinary.com/e-comerce/image/upload/v1648542477/samples/asspee_arng45.png",
+    img: "https://res.cloudinary.com/e-comerce/image/upload/v1659980365/samples/ecomerce/assest/cauli_mr2eej.jpg",
+    categoryName: "Seed",
+    mrpPrice: 1200,
+    discountPrice: 1080,
+    title: "Cauliflower",
+    discount: ["10% off"],
+    rating: 5,
+    qunatity:1
+  },
+  {
+    _id: uuid(),
+    img: "https://res.cloudinary.com/e-comerce/image/upload/v1659975927/samples/ecomerce/assest/tool3_mhoell.jpg",
     categoryName: "Tools",
     mrpPrice: 4000,
     discountPrice: 4200,
-    title: "Seed",
+    title: "Protection Suit",
     discount: ["10% off"],
     rating: 2,
     qunatity:1
