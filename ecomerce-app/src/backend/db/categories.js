@@ -25,7 +25,7 @@ export const categories = [
 
   {
     _id: uuid(),
-    categoryImg:"https://res.cloudinary.com/e-comerce/image/upload/v1648542515/samples/ecomerce/assest/seed_psvhhy.jpg",
+    categoryImg:"https://res.cloudinary.com/e-comerce/image/upload/c_scale,h_408,w_612/v1648542515/samples/ecomerce/assest/seed_psvhhy.jpg",
     categoryName: "Seed",
     description:
       "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",

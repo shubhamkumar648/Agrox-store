@@ -56,8 +56,9 @@ const Cartcard = ({ product }) => {
     }
   };
 
+
   const incrementHandler = (_id) => {
-    cartDispatch({ type: "increase_quantity", payload: _id });
+     cartDispatch({ type: "increase_quantity", payload: _id });
   };
 
   const decrementHandler = (_id) => {
@@ -104,14 +105,26 @@ const Cartcard = ({ product }) => {
                 <i className="fa fa-solid fa-plus"></i>
               </button>
 
-              <span className="count plusminus_icon">{qunatity}</span>
+            {qunatity > 0 && <span className="count plusminus_icon">{qunatity}</span> }
+               
+               {qunatity > 1 ? (
 
-              <button
+                <button
                 className="plusminus_icon"
                 onClick={() => decrementHandler(_id)}
               >
                 <i className="fa fa-solid fa-minus"></i>
               </button>
+               ): (
+                <button
+                className="plusminus_icon"
+                onClick={() => decrementHandler(_id)}
+                disabled
+              >
+                <i className="fa fa-solid fa-minus"></i>
+              </button>
+               )}
+            
             </div>
             <button
               className="btn btn__primary mt-2 mr-2"

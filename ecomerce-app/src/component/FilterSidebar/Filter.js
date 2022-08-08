@@ -11,12 +11,12 @@ export const ProductFilter = () => {
 
   return (
     <div>
-      <aside class="productlist_filter_sidebar">
+      <aside class="productlist_filter_sidebar ">
         {/* <!-- header sidebar section--> */}
         <div class="sidebar_header flex wrap pt-1">
           <h4 class="font-l mb-1"> Filters</h4>
             <span
-              class="clearall text_center"
+              class="clearall "
               onClick={() => filterdispatch({ type: "CLEAR" })}
             >
               Clear all
@@ -25,11 +25,11 @@ export const ProductFilter = () => {
         </div>
         <hr />
 
-        <div class="aside_filterlist flex flex-col wrap">
+        <div class="aside_filterlist flex flex-col wrap mr-2 pl-2">
           <PriceFilter />
 
           <div class="sortby filter_li">
-            <h4 class="font-l mt-1">Sort by</h4>
+            <h4 class="font-l mt-1"> Sort by</h4>
             <ul>
               <li>
                 <label>
@@ -45,7 +45,7 @@ export const ProductFilter = () => {
                       })
                     }
                   />
-                  Low to High
+                   Low to High
                 </label>
               </li>
               <li>
@@ -62,7 +62,7 @@ export const ProductFilter = () => {
                       })
                     }
                   />
-                  High to Low
+                   High to Low
                 </label>
               </li>
             </ul>

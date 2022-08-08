@@ -5,7 +5,7 @@ export const PriceFilter = () => {
   const { filterstate, filterdispatch } = useFilter();
 
   return (
-    <div>
+    <div className="mr-2">
       <h4 class=" font-l mt-1">Price</h4>
       <label>
         <p>
