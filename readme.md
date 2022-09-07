@@ -1,7 +1,7 @@
 ## e-comerce-app
 
 
-Agrox stor  is  a  ecommerce app  where youcan buy all ferilizer product 
+Agrox store  is  a  ecommerce app  where youcan buy all ferilizer product 
 
 # tech stack
 
